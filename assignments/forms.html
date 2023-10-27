@@ -6,23 +6,21 @@
     <title>Input Form</title>
 </head>
 <body>
-    <h1>Input Data</h1>
+    <h1>Flight Information</h1>
     <hr>
-    <form action="/login.html" method="post">
-        <label for="phone_number">Phone Number: </label> 
-        <input type="text" id="phone_number" name="phone_number" /> <br>
+    <form action="/lookup_flight.html" method="post">
+        <label for="source">Source: </label> 
+        <input type="search" id="source" name="source"/> <br>        
 
-        <label for="otp">One-Time Password: </label> 
-        <input type="password" id="otp" name="otp"/> <br>
+        <label for="dest">Destination: </label> 
+        <input type="search" id="dest" name="dest"/> <br>  
+
+        <label for="travel_date">Travel Date: </label> 
+        <input type="date" id="travel_date" name="travel_date"/> <br>  
 
         <label for="email">Email id: </label> 
         <input type="email" id="email" name="email"/> <br>   
 
-        <label for="quantity">Quantity: </label> 
-        <input type="number" id="quantity" name="quantity"/> <br>   
-
-        <label for="SearchForProdut">Product id: </label> 
-        <input type="search" id="SearchForProdut" name="SearchForProdut"/> <br>        
         <button>Submit</button>
     </form>
 </body>
