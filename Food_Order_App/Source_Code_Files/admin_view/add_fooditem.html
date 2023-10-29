@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add FoodItem</title>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div class="container">
+            <form action="">
+                <h1>Add FoodItem</h1>
+                <hr>
+                <table>
+                    <tr>
+                        <th colspan="2">FoodItem Information</th>
+                    </tr>
+                    <tr>
+                        <td><label for="pname">FoodItem Name :</label></td>
+                        <td><input type="text" name="pname" id="pname"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="desc">FoodItem Description :</label></td>
+                        <td><textarea name="desc" id="desc" cols="30" rows="5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="is_available">Available?</label></td>
+                        <td><input type="checkbox" name="is_available" id="is_available" value="yes"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="category">Category :</label></td>
+                        <td><select name="category" id="category" >
+                                <option value="American">American</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Italian">Italian</option>
+                                <option value="Mexican">Mexican</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="prodimg">FoodItem Image :</label></td>
+                        <td><input type="file" name="prodimg" id="prodimg"></td>
+                    </tr>
+                    <tr>
+                        <td><button type="cancel" class="discard">Discard</button></td>
+                        <td><button type="submit" class="save">Save</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
