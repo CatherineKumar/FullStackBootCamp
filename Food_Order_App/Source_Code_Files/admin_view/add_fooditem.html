@@ -32,8 +32,26 @@
                         <td><input type="checkbox" name="is_available" id="is_available" value="yes"></td>
                     </tr>
                     <tr>
+                        <td><label for="is_vegetarian">Vegetarian?</label></td>
+                        <td><input type="checkbox" name="is_vegetarian" id="is_vegetarian" value="yes"></td>
+                    </tr>
+                    <tr>
                         <td><label for="category">Category :</label></td>
                         <td><select name="category" id="category" >
+                                <option value="Appetizer">Appetizer</option>
+                                <option value="Entree">Entree</option>
+                                <option value="Side">Side</option>
+                                <option value="Side">Salad</option>
+                                <option value="Side">Soup</option>
+                                <option value="Side">Sandwich</option>
+                                <option value="Side">Wrap</option>
+                                <option value="Dessert">Dessert</option>
+                                <option value="Beverage">Beverage</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cuisine">Cuisine :</label></td>
+                        <td><select name="cuisine" id="cuisine" >
                                 <option value="American">American</option>
                                 <option value="Chinese">Chinese</option>
                                 <option value="Indian">Indian</option>
@@ -42,11 +60,11 @@
                             </select></td>
                     </tr>
                     <tr>
-                        <td><label for="prodimg">FoodItem Image :</label></td>
-                        <td><input type="file" name="prodimg" id="prodimg"></td>
+                        <td><label for="image_url">Image URL:</label></td>
+                        <td><input type="url" name="image_url" id="image_url"></td>
                     </tr>
                     <tr>
-                        <td><button type="cancel" class="discard">Discard</button></td>
+                        <td><button type="reset" class="discard">Discard</button></td>
                         <td><button type="submit" class="save">Save</button></td>
                     </tr>
                 </table>
