@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Product Page</title>
+  <!-- <link rel="icon" type="image/x-icon" href="../Images_Videos/Logo.jpg">
+  <link rel="stylesheet" href="../css/header-footer.css">
+  <link rel="stylesheet" href="../css/product-list.css" />
+  <link rel="stylesheet" href="../css/product.css"> -->
+
+
+  <!-- Font Awesome Icon Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .checked {
+      color: orange;
+    }
+  </style>
+
+</head>
+
+<body>
+  
+  <div>
+    <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" alt="Product">
+
+    <div>
+
+      <h3>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h3>
+
+      <div>
+        <b>Product Description:</b>
+        <p>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the
+          padded sleeve, your everyday</p>
+      </div>
+
+      <div>Price : $109.95</div>
+
+      <div>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" class="quantity" min="1" value="1" max="100">
+
+        <button class="btn">Add to Cart</button>
+        <a href="../views/cart.html">Go to Cart</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Display the product reviews -->
+  <div id="reviews">
+    <h2>Reviews</h2>
+
+    <div class="review">
+      <div class="user">David</div>
+      <div class="rating">
+        <!-- Use a series of stars to display the rating -->
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+      </div>
+      <div class="comment">This is a great product!</div>
+    </div>
+
+    <div class="review">
+      <div class="user">Will</div>
+      <div class="rating">
+        <!-- Use a series of stars to display the rating -->
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
+      <div class="comment">I love this product!</div>
+    </div>
+
+    <!-- ... add more reviews here ... -->
+
+  </div>
+</body>
+
+</html>

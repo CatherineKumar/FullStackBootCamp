@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart Page</title>
+
+</head>
+
+<body>
+
+    <div>
+        <h1 class="line">Shop Now</h1>
+        <img class="line" src="../Images_Videos/Logo.jpg" alt="Logo">
+    </div>
+
+    <div>
+        <h3>Shopping Cart</h3>
+        <div>
+            <a href="../views/home.html">Products List</a>
+            <a href="../views/order_history.html">Order History</a>
+        </div>
+    </div>
+
+    <form>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone">
+        <button type="submit">Place Order</button>
+    </form>
+
+
+    <!-- We will use the below tags in JavaScript -->
+    <div id="cart">
+        <!-- Products stored in cart will be populated over here-->
+    </div>
+
+    <div id="cart-total">
+        <!-- Displaying Cart total-->
+    </div>
+</body>
+
+</html>
