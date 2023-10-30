@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <title>Product Page</title>
+  <link rel = "stylesheet" href = "../css/products.css"/>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+ 
+  <!-- Display the product information -->
+  <h2>Product Information</h2> 
+  
+  <a href="../views/products.html">
+    <button>List of Products</button>
+  </a>
+  <br/><br/>
+  <div class="product" id="product-data">
+    <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" alt="Product">
+    <div class="info">
+      <div class="title">
+        <b>Product Title : Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</b>
+      </div>
+      <br>
+      <div class="description">
+        <b>Product Description: </b>
+        <br>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday
+      </div>
+      <div class="price">
+        <br>Price : $109.95
+      </div>
+      <div>
+        <br>
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" class="quantity" min="1" max="100">
+          <button style="margin-right:16px">Add to Cart</button>
+          <a href="../views/cart.html">
+            <button>Go to Cart</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  <!-- Display the product reviews -->
+  <h2>Reviews</h2>
+  <div class="review">
+    <div class="user">User 1</div>
+    <div class="rating">
+      <!-- Use a series of stars to display the rating -->
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+    </div>
+    <div class="comment">This is a great product!</div>
+  </div>
+  <div class="review">
+    <div class="user">User 2</div>
+    <div class="rating">
+      <!-- Use a series of stars to display the rating -->
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+    </div>
+    <div class="comment">I love this product!</div>
+  </div>
+  <!-- ... add more reviews here ... -->
+</body>
+
+</html>
