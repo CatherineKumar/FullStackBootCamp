@@ -5,80 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        table{
-            border-collapse: collapse;      
-            border-top: 3px solid black;
-            border-bottom: 3px solid black;                  
-        }
-        th, td {
-            border-left: 3px solid black;
-            border-right: 3px solid black;
-            padding: 5px;
-
-        }
-        #c1,#c2, #c3, #c4, #c5, #c6
-        {
-            border-bottom: 3px solid black;
-        }
-    </style>    
     <title>Admin Page</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <div class="header"></div>
     <div class="main">
         <div class="container">
-            <table>
-                <tr>
-                    <th colspan="3" id="c1"><h1>Admin Dashboard</h1></th>    
-                </tr>
-                <tr><td colspan="2"><h2>Food Items</h2></td></tr>
-                <tr>                
-                    <td colspan="2" id="c2">
-                        <a href="list_fooditems.html" class="card-link">View Food Item</a>
-                        <a href="add_fooditem.html" class="card-link">Add Food Item</a>
-                    </td>
-                </tr>
+            <h1>Admin Dashboard</h1>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Food Items</h2>
+                            <a href="list_fooditems.html" class="card-link">View Food Item</a>
+                            <a href="add_fooditem.html" class="card-link">Add Food Item</a>
+                            </div>
+                    </div>
+                </div>
 
-                <tr>
-                    <td> <h2>Cuisines</h2></td>
-                    <td> <h2>Categories</h2></td>
-                </tr>
-                <tr>                
-                    <td id="c3">
-                        <a href="list_cuisines.html" class="card-link">View All Cuisines</a>
-                        <a href="add_cuisine.html" class="card-link">Add Cuisine</a>
-                    </td>              
-                    <td id="c4" >
-                        <a href="list_categories.html" class="card-link">View Categories</a>
-                        <a href="add_category.html" class="card-link">Add Category</a>
-                    </td>
-                </tr>  
-                <tr>
-                    <td> <h2>Restaurants</h2></td>
-                    <td> <h2>Users</h2></td>
-                </tr>  
-                <tr>                
-                    <td id="c5">
-                        <a href="list_restaurants.html" class="card-link">View Restaurants</a>
-                        <a href="add_restaurant.html" class="card-link">Add Restaurant</a>
-                </td>              
-                    <td id="c6">
-                        <a href="list_customers.html" class="card-link">View Customers</a>                    </td>
-                </tr> 
-                <tr>
-                    <td> <h2>Order</h2></td>
-                    <td> <h2>Restaurant Menu</h2></td>
-                </tr>  
-                <tr>
-                    <td><a href="list_orders.html" class="card-link">View Orders</a></td>
-                    <td>
-                        <a href="list_restaurantmenus.html" class="card-link">View Menu</a>
-                        <a href="add_restaurantmenu.html" class="card-link">Update Menu</a>
-                    </td>
-                </tr>                      
-            </table>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Cuisines</h2>
+                            <a href="list_cuisines.html" class="card-link">View All Cuisines</a>
+                            <a href="add_cuisine.html" class="card-link">Add Cuisine</a>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Categories</h2>
+                            <a href="list_categories.html" class="card-link">View Categories</a>
+                            <a href="add_category.html" class="card-link">Add Category</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Restaurants</h2>
+                            <a href="list_restaurants.html" class="card-link">View Restaurants</a>
+                            <a href="add_restaurant.html" class="card-link">Add Restaurant</a>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Users</h2>
+                            <a href="list_customers.html" class="card-link">View Customers</a>                    
+                        </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Order</h2>
+                            <a href="list_orders.html" class="card-link">View Orders</a>                    
+                        </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Restaurant Menu</h2>
+                            <a href="list_restaurantmenus.html" class="card-link">View Menu</a>
+                            <a href="add_restaurantmenu.html" class="card-link">Update Menu</a>
+                        </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer"></div>
