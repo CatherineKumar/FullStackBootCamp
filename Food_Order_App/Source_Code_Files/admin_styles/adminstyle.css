@@ -39,6 +39,17 @@ a{
 a:hover{
     color: #0736a5;
 }
+button{
+    background-color:#4475e7;
+    color: whitesmoke;
+    padding: .5rem;
+    box-shadow: 1px 1px darkgrey;
+}
+table{
+    border-radius: 10px;
+    box-shadow: 0 0 5px darkgrey;
+    padding: 1rem;
+}
 
 
 
