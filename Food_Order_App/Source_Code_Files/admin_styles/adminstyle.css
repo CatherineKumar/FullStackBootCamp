@@ -11,7 +11,6 @@ h1{
     text-align: center;
 }
 
-
 .container{
     display: flex;
     flex-direction: column;
@@ -22,7 +21,7 @@ h1{
 .card{
     background-color:  #db996c;
     text-align: center;
-    width: 50%;
+    width: 40%;
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
@@ -39,12 +38,14 @@ a{
 a:hover{
     color: #0736a5;
 }
+
 button{
     background-color:#4475e7;
     color: whitesmoke;
     padding: .5rem;
     box-shadow: 1px 1px darkgrey;
 }
+
 table{
     border-radius: 10px;
     box-shadow: 0 0 5px darkgrey;
