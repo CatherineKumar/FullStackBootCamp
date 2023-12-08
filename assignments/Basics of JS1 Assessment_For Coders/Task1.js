@@ -1,11 +1,4 @@
 /*
-
-1.3. Write a program to compare two numbers, `num1` and `num2`, and check if `num1` is
-greater than or equal to `num2`.
-1.4. Write a program to calculate the square of a given number, `num`.
-1.5. Write a program to check if a given number, `num`, is even or odd.
-1.6. Write a program to check if a given year, `year`, is a leap year and divisible by 400 or
-divisible by 4 but not divisible by 100.
 1.7. Write a program that checks if a given character, `char`, is a vowel or a consonant.
 1.8. Write a program that determines the largest among three numbers, `num1`, `num2`,
 and `num3`.
@@ -63,3 +56,58 @@ else
 {
     console.log('1.3 ' + 'num1 is not greater than or equal to num2')
 }
+
+/*
+1.4. Write a program to calculate the square of a given number, `num`.
+*/
+
+var num
+var result
+
+num = 3
+result = num ** 2
+
+console.log('1.4  The square of ' + num + ' equals ' + result)
+
+/*
+1.5. Write a program to check if a given number, `num`, is even or odd.
+*/
+
+var num
+var isEven
+
+num = 6
+
+isEven = num % 2 == 0 ? true : false
+
+if (isEven)
+{
+    console.log('1.5 num ' + num + ' is even')
+}
+else
+{
+    console.log('1.5 num ' + num +' is odd')
+}
+
+/*
+1.6. Write a program to check if a given year, `year`, is a leap year and divisible by 400 or
+divisible by 4 but not divisible by 100.
+*/
+
+var year
+var isLeapYear
+
+year = 2024
+
+if ( (year % 400 == 0) ||
+     ( year % 4 == 0 && year % 100 != 0  )
+   )
+{
+    isLeapYear = true
+}
+else
+{
+    isLeapYear = false
+}
+
+console.log ('1.6 Year ' + year + ', isLeapYear = ' + isLeapYear)
