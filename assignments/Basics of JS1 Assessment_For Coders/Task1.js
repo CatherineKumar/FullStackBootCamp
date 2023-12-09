@@ -1,12 +1,3 @@
-/*
-1.7. Write a program that checks if a given character, `char`, is a vowel or a consonant.
-1.8. Write a program that determines the largest among three numbers, `num1`, `num2`,
-and `num3`.
-1.9. Write a program that determines the sign of a given number, `num` (positive, negative,
-or zero), using the ternary operator.
-1.10. Write a program that determines the grade based on a given percentage, `percentage`.
-Use the following grading scale: A (90-100), B (80-89), C (70-79), D (60-69), F (0-59).
-*/
 
 /*
 1.1. Create a variable `isHappy` and assign it a boolean value based on the value of the given
@@ -26,7 +17,7 @@ else
     isHappy = false
 }
 
-console.log('1.1 isHappy = ' + isHappy)
+console.log('1.1 action = ' + action + ', isHappy = ' + isHappy)
 
 /*
 1.2. Create a variable `favoriteSubjects` and assign it an array of strings representing your
@@ -111,3 +102,101 @@ else
 }
 
 console.log ('1.6 Year ' + year + ', isLeapYear = ' + isLeapYear)
+
+/*
+1.7. Write a program that checks if a given character, `char`, is a vowel or a consonant.
+*/
+
+function isVowel(ch) {
+
+    var result;
+    var ch_upper;
+
+    ch_upper = ch.toUpperCase()
+
+    result = ch_upper == "A" || ch_upper == "E" || ch_upper == "I" || ch_upper == "O" || ch_upper == "U"
+    return result
+}
+
+var x
+
+x = 'A'
+
+console.log( '1.7 character ' + x  +', isVowel = ' + isVowel(x) )
+
+/*
+1.8. Write a program that determines the largest among three numbers, `num1`, `num2`,
+and `num3`.
+*/
+
+function maxValue ()
+{
+    // find highest number
+    var len = arguments.length;
+    var max = -Infinity;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+        if (arguments[i] > max) 
+        {
+            max = arguments[i]; 
+        }
+    }
+    return max
+}
+
+var max
+var num1, num2, num3
+
+num1 = 2
+num2 = -1
+num3 = 4
+
+max = maxValue(num1,num2,num3)
+console.info('1.8 Max value = ' + max);
+
+/*
+1.9. Write a program that determines the sign of a given number, `num` (positive, negative,
+    or zero), using the ternary operator.
+*/
+
+var num
+var sign
+
+num = 5
+sign = num == 0 ? 'zero' : num < 0 ? 'negative' : 'positive'
+
+console.log('num ' + num + ' is ' + sign)
+
+/*
+1.10. Write a program that determines the grade based on a given percentage, `percentage`.
+Use the following grading scale: A (90-100), B (80-89), C (70-79), D (60-69), F (0-59).
+*/
+
+var percentage
+var letterGrade
+
+percentage = 70
+
+if ( percentage >= 90 )
+{
+    letterGrade = 'A'
+}
+else if ( percentage >= 80 )
+{
+    letterGrade = 'B'
+}
+else if ( percentage >= 70 )
+{
+    letterGrade = 'C'
+}
+else if ( percentage >= 60 )
+{
+    letterGrade = 'D'
+}
+else if ( percentage >=0 )
+{
+    letterGrade = 'F'
+}
+
+console.log( 'Percentage =' + percentage + ' Letter Grade = ' + letterGrade)
