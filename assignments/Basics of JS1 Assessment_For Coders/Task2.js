@@ -1,5 +1,4 @@
 /*
-2.6. Write a program to print the multiplication table of 7.
 2.7. Write a function to calculate the factorial of a number.
 2.8. Write a function to generate a Fibonacci series. Fibonacci Series is a sequence of
 numbers in which each number is the sum of the two preceding ones. It starts with 0
@@ -147,3 +146,27 @@ function getOutofStock (items)
 var itemQuantities = [0,100,23,0,7]
 var itemsOutOfStock = getOutofStock(itemQuantities)
 console.log(itemsOutOfStock)
+
+/*
+2.6. Write a program to print the multiplication table of 7.
+*/
+
+function multiplicationTable( num, maxMultiplier)
+{
+    var i;
+    var result;
+    if (maxMultiplier <= 0)
+    {
+        return
+    }    
+
+    for ( i=1; i<=maxMultiplier; i++)
+    {
+        result = 7*i;
+        console.log( num + ' X ' + i + ' = ' + result)
+    }
+    return
+
+}
+
+multiplicationTable(7,12)
