@@ -1,6 +1,4 @@
 /*
-2.4. Write a function that takes an array of product prices and a discount percentage. Apply
-the discount to each product price and return the updated prices as an array.
 2.5. Write a function that takes an array of product quantities and returns an array of indices
 for products that are out of stock (quantity is 0).
 2.6. Write a program to print the multiplication table of 7.
@@ -42,7 +40,7 @@ function triangleType (side1, side2, side3)
     return result
 }
 
-console.log (    triangleType(1,2,3)    )
+console.log (    triangleType(1,1,2)    )
 
 
 
@@ -61,7 +59,6 @@ function countOf (val, list)
         if (list[i] == val )
         {
             count++
-  
         }
     }
     return count
@@ -93,3 +90,38 @@ function totalPrice (items)
 var itemPrices = [5.1, 7, 3.26, 10, 0.50];
 
 console.log( totalPrice( itemPrices) )
+
+/*
+2.4. Write a function that takes an array of product prices and a discount percentage. Apply
+the discount to each product price and return the updated prices as an array.
+*/
+
+function applyDiscount (discount, items)
+{
+    var discountPercent
+
+    if ( discount >= 1 && discount <= 100 )
+    {
+        discountPercent = discount / 100
+    } else if ( discount >= 0 && discount < 1)
+    {
+        discountPercent = discount
+    }
+    else
+    {
+        discountPercent  = 0
+    }
+
+    var len = items.length;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+        items[i] = (1-discountPercent) * items[i] 
+    }
+}
+
+var itemPrices = [5.1, 7, 3.26, 10, 0.50];
+
+applyDiscount( 0,itemPrices) 
+
+console.log ( itemPrices )
