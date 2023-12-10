@@ -1,7 +1,4 @@
 /*
-
-
-
 2.4. Write a function that takes an array of product prices and a discount percentage. Apply
 the discount to each product price and return the updated prices as an array.
 2.5. Write a function that takes an array of product quantities and returns an array of indices
@@ -23,11 +20,11 @@ scalene.
 */
 function triangleType (side1, side2, side3)
 {
-    var trianbleType
+    var result
 
     if ( side1== side2 && side2 == side3)
     {
-        trianbleType = 'equilateral'
+        result = 'equilateral'
     }
     else if (
         ( side1 == side2 && side1 != side3 ) ||
@@ -35,14 +32,14 @@ function triangleType (side1, side2, side3)
         ( side2 == side3 && side2 != side1 )
     )  
     {
-        trianbleType = 'isosceles'
+        result = 'isosceles'
     }
     else 
     {
-        trianbleType = 'scalene'
+        result = 'scalene'
     }
 
-    return trianbleType
+    return result
 }
 
 console.log (    triangleType(1,2,3)    )
@@ -56,7 +53,6 @@ in an array using a for...of loop.
 
 function countOf (val, list)
 {
-    // find highest number
     var len = list.length;
     var count = 0;
     var i;
@@ -83,7 +79,6 @@ assume that the array contains only numbers.
 
 function totalPrice (items)
 {
-    // find highest number
     var len = items.length;
     var total = 0;
     var i;
