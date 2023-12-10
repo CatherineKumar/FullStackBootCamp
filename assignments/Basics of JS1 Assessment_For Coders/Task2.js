@@ -1,8 +1,7 @@
 /*
 
 
-2.3. Write a function that takes an array of product prices and returns the total price. You can
-assume that the array contains only numbers.
+
 2.4. Write a function that takes an array of product prices and a discount percentage. Apply
 the discount to each product price and return the updated prices as an array.
 2.5. Write a function that takes an array of product quantities and returns an array of indices
@@ -55,20 +54,15 @@ console.log (    triangleType(1,2,3)    )
 in an array using a for...of loop.
 */
 
-/*
-   function countOf - counts the occurences of a specific element (val) in an array
-   parameters: val, array using spread operator
-   return value: number of occurences of val in the array
-*/ 
-function countOf (val)
+function countOf (val, list)
 {
     // find highest number
-    var len = arguments.length;
+    var len = list.length;
     var count = 0;
     var i;
-    for (i = 1; i < len; i++) 
+    for (i = 0; i < len; i++) 
     {
-        if (arguments[i] == val ) 
+        if (list[i] == val )
         {
             count++
   
@@ -80,4 +74,27 @@ function countOf (val)
 var numbers = [5, 7, 3,5,5];
 
 
-console.log( countOf(6, ...numbers) )
+console.log( countOf(5, numbers) )
+
+/*
+2.3. Write a function that takes an array of product prices and returns the total price. You can
+assume that the array contains only numbers.
+*/
+
+function totalPrice (items)
+{
+    // find highest number
+    var len = items.length;
+    var total = 0;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+        total += items[i]
+    }
+    return total
+}
+
+
+var itemPrices = [5.1, 7, 3.26, 10, 0.50];
+
+console.log( totalPrice( itemPrices) )
