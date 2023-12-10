@@ -1,6 +1,4 @@
 /*
-2.5. Write a function that takes an array of product quantities and returns an array of indices
-for products that are out of stock (quantity is 0).
 2.6. Write a program to print the multiplication table of 7.
 2.7. Write a function to calculate the factorial of a number.
 2.8. Write a function to generate a Fibonacci series. Fibonacci Series is a sequence of
@@ -122,6 +120,30 @@ function applyDiscount (discount, items)
 
 var itemPrices = [5.1, 7, 3.26, 10, 0.50];
 
-applyDiscount( 0,itemPrices) 
+applyDiscount( 20,itemPrices) 
 
 console.log ( itemPrices )
+
+/*
+2.5. Write a function that takes an array of product quantities and returns an array of indices
+for products that are out of stock (quantity is 0).
+*/
+
+function getOutofStock (items)
+{
+    var itemsOutOfStock = new Array()
+    var len = items.length;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+       if (items[i]== 0)
+       {
+            itemsOutOfStock.push (i)
+       } 
+    }
+    return itemsOutOfStock
+}
+
+var itemQuantities = [0,100,23,0,7]
+var itemsOutOfStock = getOutofStock(itemQuantities)
+console.log(itemsOutOfStock)
