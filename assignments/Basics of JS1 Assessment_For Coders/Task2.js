@@ -199,6 +199,41 @@ console.log(calculateFactorial(-1));    // Should print "Input must be a positiv
 
 function generateFibonacciSeries(numTerms) {
 // COMPLETE THE CODE HERE
+    var nextTerm
+    var num1
+    var num2
+    var i
+    var series = new Array()
+
+    num1 = 0
+    num2 = 1
+
+    if (numTerms >= 1)
+    {
+        series.push(0)
+    }
+    if (numTerms >=2)
+    {
+        series.push(1)
+    }
+    if (numTerms >=3)
+    {
+        for ( i=1; i<numTerms-1; i++ )
+        {
+            nextTerm = num1 + num2
+            series.push(nextTerm)
+            num1 = num2
+            num2 = nextTerm
+        }
+    }
+    if (series.length > 0)
+    {
+        return series
+    } 
+    else
+    {
+        return 'Input must be a positive integer'
+    }
 }
 
 // Example Usage
@@ -220,7 +255,15 @@ console.log(generateFibonacciSeries(10));  // Should print [0, 1, 1, 2, 3, 5, 8,
 
 function printTriangle(rows) {
   // COMPLETE THE CODE HERE
-}
+    var i
+    var str = ''
+
+    for ( i = 1; i <= rows; i++) { 
+        str = '* '; 
+        console.log(str.repeat(i)); 
+    }    
+}  
+
 
 // Example Usage
 printTriangle(5);
@@ -232,6 +275,14 @@ printTriangle(7);
 
 function reverseString(inputString) {
 // COMPLETE THE CODE HERE
+    var strNew = ''
+    var i
+
+    for ( i = inputString.length - 1; i >= 0; i--) 
+    { 
+        strNew += inputString[i]
+    }
+    return strNew
 }
 
 // Example Usage
