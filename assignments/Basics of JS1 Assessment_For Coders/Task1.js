@@ -115,7 +115,7 @@ else if (!isAlpha)
     result = 'non alpha'
 }
 
-console.log( result )
+console.log( '1.7 character ' + char + ', '+ result )
 
 // 8. Write a program that determines the largest among three numbers, `num1`, `num2`, and `num3`.
 
@@ -124,13 +124,63 @@ var num2 = 5;
 var num3 = 8;
 var largest;
 //COMPLETE THE CODE HERE
+function maxValue ()
+{
+    // find highest number
+    var len = arguments.length;
+    var max = -Infinity;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+        if (arguments[i] > max) 
+        {
+            max = arguments[i]; 
+        }
+    }
+    return max
+}
+
+largest = maxValue(num1,num2,num3)
+console.log('1.8 Largest value = ' +largest)
+
 
 // 9. Write a program that determines the sign of a given number, `num` (positive, negative, or zero), using the ternary operator.
 
 var num = -5;
 //COMPLETE THE CODE HERE  
 
+var sign
+
+sign = num == 0 ? 'zero' : num < 0 ? 'negative' : 'positive'
+
+console.log('1.9 num ' + num + ' is ' + sign)
+
 // 10. Write a program that determines the grade based on a given percentage, `percentage`. Use the following grading scale: A (90-100), B (80-89), C (70-79), D (60-69), F (0-59).
 
 var percentage = 85;
 //COMPLETE THE CODE HERE
+var letterGrade
+
+
+if ( percentage >= 90 )
+{
+    letterGrade = 'A'
+}
+else if ( percentage >= 80 )
+{
+    letterGrade = 'B'
+}
+else if ( percentage >= 70 )
+{
+    letterGrade = 'C'
+}
+else if ( percentage >= 60 )
+{
+    letterGrade = 'D'
+}
+else if ( percentage >=0 )
+{
+    letterGrade = 'F'
+}
+
+console.log( '1.10 Percentage = ' + percentage + ', Letter Grade = ' + letterGrade)
