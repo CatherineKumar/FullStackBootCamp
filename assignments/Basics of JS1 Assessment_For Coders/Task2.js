@@ -236,7 +236,7 @@ function  pattern(n)
     var str = ''
 
     for ( i = 1; i <= n; i++) { 
-        str = "* "; 
+        str = '* '; 
         console.log(str.repeat(i)); 
     }    
 }
