@@ -1,9 +1,3 @@
-/*
-
-2.9. Write a function to print a star-pattern triangle. The function should take the number of
-rows as an argument.
-2.10. Write a function to reverse a string.
-*/
 
 /*
 2.1. Write a program that determines the type of triangle based on the lengths of its sides
@@ -35,7 +29,6 @@ function triangleType (side1, side2, side3)
 }
 
 console.log (    triangleType(1,1,2)    )
-
 
 
 /*
@@ -229,3 +222,40 @@ function FibonacciPrint (numTerms)
 }
 
 FibonacciPrint (8)
+
+
+
+/*
+2.9. Write a function to print a star-pattern triangle. The function should take the number of
+rows as an argument.
+*/
+
+function  pattern(n)
+{ 
+    var i
+    var str = ''
+
+    for ( i = 1; i <= n; i++) { 
+        str = "* "; 
+        console.log(str.repeat(i)); 
+    }    
+}
+
+pattern(4)
+
+/*
+2.10. Write a function to reverse a string.
+*/
+
+function reverseString(strOrig) {
+    var strNew = ''
+    var i
+
+    for ( i = strOrig.length - 1; i >= 0; i--) 
+    { 
+        strNew += strOrig[i]
+    }
+    return strNew
+}
+ 
+console.log ( reverseString('hello') )
