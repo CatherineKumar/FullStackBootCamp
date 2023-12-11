@@ -55,7 +55,6 @@ else
 var num
 var result
 
-num = 3
 result = num ** 2
 
 console.log('1.4  The square of ' + num + ' equals ' + result)
@@ -66,8 +65,6 @@ console.log('1.4  The square of ' + num + ' equals ' + result)
 
 var num
 var isEven
-
-num = 6
 
 isEven = num % 2 == 0 ? true : false
 
@@ -87,8 +84,6 @@ divisible by 4 but not divisible by 100.
 
 var year
 var isLeapYear
-
-year = 2024
 
 if ( (year % 400 == 0) ||
      ( year % 4 == 0 && year % 100 != 0  )
