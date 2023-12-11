@@ -79,6 +79,28 @@ console.log(calculateTotalPrice(productPrices));
 
 function applyDiscount(prices, discount) {
   //COMPLETE THE CODE HERE
+    var discountPercent
+    var discountPrices = new Array()
+
+    if ( discount >= 1 && discount <= 100 )
+    {
+        discountPercent = discount / 100
+    } else if ( discount >= 0 && discount < 1)
+    {
+        discountPercent = discount
+    }
+    else
+    {
+        discountPercent  = 0
+    }
+
+    var len = prices.length;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+        discountPrices.push((1-discountPercent) * prices[i])
+    }
+    return discountPrices  
 }
 
 // Example usage:
@@ -91,6 +113,18 @@ console.log(applyDiscount(productPrices, discountPercentage));
 
 function getOutOfStockProducts(quantities) {
   //COMPLETE THE CODE HERE
+  var itemsOutOfStock = new Array()
+  var len = quantities.length;
+  var i;
+  for (i = 0; i < len; i++) 
+  {
+     if (quantities[i]== 0)
+     {
+          itemsOutOfStock.push (i)
+     } 
+  }
+  return itemsOutOfStock
+
 }
 
 // Example usage:
@@ -102,6 +136,25 @@ console.log(getOutOfStockProducts(productQuantities));
 // 7 * 1 = 7
 
 // WRITE THE CODE HERE
+function multiplicationTable( num, maxMultiplier)
+{
+    var i;
+    var result;
+    if (maxMultiplier <= 0)
+    {
+        return
+    }    
+
+    for ( i=1; i<=maxMultiplier; i++)
+    {
+        result = 7*i;
+        console.log( num + ' * ' + i + ' = ' + result)
+    }
+    return
+
+}
+
+multiplicationTable(7,12)
 
 
 // 7. Create a function to calculate factorial of a number.
@@ -110,6 +163,25 @@ console.log(getOutOfStockProducts(productQuantities));
 
 function calculateFactorial(n) {
 // COMPLETE THE CODE HERE
+    var result;
+    var i;
+
+    if (n < 0)
+    {
+        result = 'Input must be a positive integer'
+    }
+    else if (n == 0)   
+    {
+        result = 1
+    }
+    else{
+        result = 1
+        for (i = 1; i <= n; i++)
+        {
+            result = result * i
+        }
+    }
+    return result
 }
 
 // Example Usage
