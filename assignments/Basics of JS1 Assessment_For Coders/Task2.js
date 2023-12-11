@@ -6,10 +6,48 @@ var side3 = 8;
 var triangleType;
 //COMPLETE THE CODE HERE
 
+function findTriangleType (side1, side2, side3)
+{
+    var result
+
+    if ( side1== side2 && side2 == side3)
+    {
+        result = 'equilateral'
+    }
+    else if (
+        ( side1 == side2 && side1 != side3 ) ||
+        ( side1 == side3 && side1 != side2 ) ||
+        ( side2 == side3 && side2 != side1 )
+    )  
+    {
+        result = 'isosceles'
+    }
+    else 
+    {
+        result = 'scalene'
+    }
+
+    return result
+}
+
+triangleType = findTriangleType(side1, side2, side3)
+console.log('2.2 ' + triangleType)
+
 // 2. Write a JavaScript program that counts the number of occurrences of a specific element in an array using a for...of loop.
 
 function countOccurrences(arr, target) {
   //COMPLETE THE CODE HERE
+    var len = arr.length;
+    var count = 0;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+        if (arr[i] == target )
+        {
+            count++
+        }
+    }
+    return count
 }
   
   var numbers = [1, 2, 3, 2, 4, 2, 5];
@@ -21,6 +59,14 @@ function countOccurrences(arr, target) {
 
 function calculateTotalPrice(prices) {
   //COMPLETE THE CODE HERE
+    var len = prices.length;
+    var total = 0;
+    var i;
+    for (i = 0; i < len; i++) 
+    {
+        total += prices[i]
+    }
+    return total
 }
 
 // Example usage:
