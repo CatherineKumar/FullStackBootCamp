@@ -1,8 +1,5 @@
 /*
-2.7. Write a function to calculate the factorial of a number.
-2.8. Write a function to generate a Fibonacci series. Fibonacci Series is a sequence of
-numbers in which each number is the sum of the two preceding ones. It starts with 0
-and 1.
+
 2.9. Write a function to print a star-pattern triangle. The function should take the number of
 rows as an argument.
 2.10. Write a function to reverse a string.
@@ -170,3 +167,40 @@ function multiplicationTable( num, maxMultiplier)
 }
 
 multiplicationTable(7,12)
+
+/*
+2.7. Write a function to calculate the factorial of a number.
+*/
+
+function factorial(num)
+{
+    var result;
+    var i;
+
+    result = 1;
+
+    if (num <= 0)
+        return 0;
+
+    for (i = 1; i <= num; i++)
+    {
+        result = result * i
+    }
+    return result
+}
+
+console.log(factorial(4))
+
+/*
+2.8. Write a function to generate a Fibonacci series. Fibonacci Series is a sequence of
+numbers in which each number is the sum of the two preceding ones. It starts with 0
+and 1.
+*/
+
+function FibonacciPrint (tnumTerms)
+{
+    var nextTerm
+    var num1
+    var num2
+
+}
