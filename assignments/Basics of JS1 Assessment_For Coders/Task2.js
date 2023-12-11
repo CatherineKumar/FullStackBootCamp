@@ -197,10 +197,35 @@ numbers in which each number is the sum of the two preceding ones. It starts wit
 and 1.
 */
 
-function FibonacciPrint (tnumTerms)
+function FibonacciPrint (numTerms)
 {
     var nextTerm
     var num1
     var num2
+    var i
 
+    num1 = 0
+    num2 = 1
+
+    if (numTerms >= 1)
+    {
+        console.log(num1)
+    }
+    if (numTerms >=2)
+    {
+        console.log(num2)
+    }
+    if (numTerms >=3)
+    {
+        for ( i=1; i<numTerms-1; i++ )
+        {
+            nextTerm = num1 + num2
+            console.log(nextTerm)
+            num1 = num2
+            num2 = nextTerm
+        }
+    }
+    return
 }
+
+FibonacciPrint (8)
