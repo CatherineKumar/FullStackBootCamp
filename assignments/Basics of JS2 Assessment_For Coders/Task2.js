@@ -4,14 +4,66 @@
 // This filterEvens function will filter out  only even numbers using the checkEven function and generate a new array of the even numbers.
 
 //COMPLETE YOUR CODE HERE 
+function checkEven (n)
+{
+    return n % 2 == 0;
+}
+
+function filterEvens (arr, checkfn)
+{
+    var len;
+    var newArr = new Array()
+    len = arr.length;
+    for(let i=0; i<len; i++)
+    {
+        if ( checkfn(arr[i]))
+        {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
+}
+
+var numList = [23,41,4,16,1,7,2]
+var newList
+
+newList = filterEvens(numList,checkEven)
+console.log (newList)
 
 //2. Write an IIFE that calculates the factorial of a given number and immediately logs the result to the console.
 
 //COMPLETE YOUR CODE HERE 
+(function (num) {
+    var result;
+    if (num === 0 || num === 1)
+    {
+        console.log(1)
+    }
+    
+    for (var i = num - 1; i >= 1; i--) {
+      num = num * i; 
+    }
+    console.log(num); 
+  })(5)
+
 
 //3. Implement a function "calculate" that takes three arguments: a, b, and an operation function. 
 //The operation function should accept two parameters and perform a specific mathematical operation like addition, subtraction, multiplication and division. 
 //Use call(), apply(), or bind() to apply the operation function to the arguments a and b.
+
+function add(x,y)
+{
+    return x+y;
+}
+
+function calculate( a, b, fn)
+{
+    return fn(a,b)
+}
+
+
+console.log( calculate.call(this, 1, 2,add) )
+
 
 //COMPLETE YOUR CODE HERE 
 
