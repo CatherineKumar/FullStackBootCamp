@@ -109,7 +109,6 @@ console.log( result )
 
 //6. Write a function printContext that, when invoked, logs the this keyword to the console. Then, demonstrate how the context of a function can change when calling it with different objects using the call method.
 
-
 //COMPLETE YOUR CODE HERE 
 function printContext() {
     console.log(this) ;
@@ -125,9 +124,29 @@ console.log(this)
 //7. Create a function multiply that takes two parameters and returns their product. Use the bind method to create a new function "double" that multiplies a single parameter by 2.
 
 //COMPLETE YOUR CODE HERE 
+function multiply (a,b)
+{
+  return a*b
+}
+
+console.log( multiply(3,5))
+
+const double = multiply.bind(null,2);
+
+console.log( double(7))
 
 // 8. Create an object person with properties name and age. Write a function "introduce" that logs a message introducing the person. Then, use the call method to invoke the introduce function with the person object as the context.
 
+let person = {
+    name: "John", 
+    age: 24,
+    introduce() {
+      console.log('Hello! My name is ' + this.name + '.');
+    },
+  };
+
+  person.introduce()
+            
 //COMPLETE YOUR CODE HERE 
 
 // 9. Write a higher order function createMultiplier that takes a factor as an argument and returns another functiom that multiplies a number by that factor. 

@@ -1,13 +1,33 @@
-function getThis() {
-    return this;
+function list(...args) {
+    return args;
   }
   
-  const obj1 = { name: "obj1" };
-  const obj2 = { name: "obj2" };
+  function addArguments(arg1, arg2) {
+    return arg1 + arg2;
+  }
   
-  obj1.getThis = getThis;
-  obj2.getThis = getThis;
+  console.log(list(1, 2, 3)); // [1, 2, 3]
   
-  console.log(obj1.getThis()); // { name: 'obj1', getThis: [Function: getThis] }
-  console.log(obj2.getThis()); // { name: 'obj2', getThis: [Function: getThis] }
+  console.log(addArguments(1, 2)); // 3
   
+  // Create a function with a preset leading argument
+  const leadingThirtySevenList = list.bind(null, 37);
+  
+  // Create a function with a preset first argument.
+  const addThirtySeven = addArguments.bind(null, 37);
+  
+  console.log(leadingThirtySevenList()); // [37]
+  console.log(leadingThirtySevenList(1, 2, 3)); // [37, 1, 2, 3]
+  console.log(addThirtySeven(5)); // 42
+  console.log(addThirtySeven(5, 10)); // 42
+
+  //7. Create a function multiply that takes two parameters and returns their product. Use the bind method to create a new function "double" that multiplies a single parameter by 2.
+
+  function multiply (a,b)
+  {
+    return a*b
+  }
+
+  console.log( multiply(3,5))
+  const double = multiply.bind(null,2);
+  console.log( double(5))
