@@ -86,12 +86,11 @@ console.log( list)
 // 7. Implement a function called `multiplyBy` that multiplies a number by a specific factor using an IIFE (Immediately Invoked Function Expression).
 
 //COMPLETE YOUR CODE HERE 
-(function multiplyBy(n,factor) {
-    var result = n*factor;
-    console.log("Result: "+ result);
-    return result;
-})(2,5);
+let x = (function multiplyBy (a,b){
+    return a * b;
+})(10, 20);
 
+console.log(x)
 //8. Using the `call` method, write a function that finds the maximum number in an array.
 
 //COMPLETE YOUR CODE HERE 
