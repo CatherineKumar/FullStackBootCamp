@@ -24,27 +24,36 @@ function filterEvens (arr, checkfn)
     return newArr
 }
 
-var numList = [23,41,4,16,1,7,2]
-var newList
+var numList = [23,41,4,16,1,7,2];
+var newList;
 
-newList = filterEvens(numList,checkEven)
-console.log (newList)
+newList = filterEvens(numList,checkEven);
+console.log (newList);
 
 //2. Write an IIFE that calculates the factorial of a given number and immediately logs the result to the console.
 
 //COMPLETE YOUR CODE HERE 
-(function (num) {
-    var result;
+let fn = (function factorial (num) {
+    if (typeof num !== "number") {
+        throw new TypeError("factorial() expects a number.");
+    }
+    if (Math.floor(num) !== num) {
+        throw new TypeError("factorial() expects an integer.");
+    }
+    if (num < 0) {
+        throw new RangeError("factorial() expects a non-negative number.");
+    }
+
     if (num === 0 || num === 1)
     {
-        console.log(1)
+        num = 1
     }
     
     for (var i = num - 1; i >= 1; i--) {
-      num = num * i; 
+      num = num * i
     }
-    console.log(num); 
-  })(5)
+    console.log(num)
+  })(6)
 
 
 //3. Implement a function "calculate" that takes three arguments: a, b, and an operation function. 
@@ -79,7 +88,6 @@ function findOldest (personArr)
 
     for (var i = 0; i < personArr.length; i++) 
     {
-        //checking high
         if (personArr[i].age > high)
         {
             high = personArr[i].age;
@@ -121,6 +129,7 @@ function printContext() {
   printContext.call(obj2);
 
 console.log(this)
+
 //7. Create a function multiply that takes two parameters and returns their product. Use the bind method to create a new function "double" that multiplies a single parameter by 2.
 
 //COMPLETE YOUR CODE HERE 
@@ -164,3 +173,13 @@ console.log( createMultiplier(4)(6))
 // 10. Write a function called "calculate" that adds two numbers and assign a property "description" to it with a string describing what the function does. Then, access and log this property.
 
 //COMPLETE YOUR CODE HERE 
+function calculate(x,y) {
+    return x+y;
+};
+    
+calculate.description = 'Function to add two numbers';
+
+console.log('calculate.description : ' + calculate.description);
+console.log( calculate(7,4))
+
+
