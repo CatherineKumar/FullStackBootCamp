@@ -2,6 +2,9 @@
 // If input is 2, output should be 4.
 
 //COMPLETE YOUR CODE HERE 
+let square = function(n) {
+    return n**2;
+};
 
 console.log(square(2));
 
@@ -9,6 +12,9 @@ console.log(square(2));
 // If input is "Harry", output should be "Hello Harry, Welcome to Great Learning!"
 
 //COMPLETE YOUR CODE HERE 
+(function(personName){
+    console.log("Hello " + personName + ", Welcome to Great Learning!" );
+})("Harry");
 
 // 3. Define a global array variable containing 3 numbers. 
 // Define a function which increments the value of each of the elements of this array by 2. 
