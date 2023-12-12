@@ -137,18 +137,18 @@ console.log( double(7))
 
 // 8. Create an object person with properties name and age. Write a function "introduce" that logs a message introducing the person. Then, use the call method to invoke the introduce function with the person object as the context.
 
-let person = {
-    name: "John", 
-    age: 24,
-    introduce() {
-      console.log('Hello! My name is ' + this.name + '.');
-    },
-  };
-
-  person.introduce()
-            
 //COMPLETE YOUR CODE HERE 
-
+function introduce() {
+    console.log("Hello! My name is", this.name + ".");
+  }
+  
+const person = {
+    name: "John",
+    age: 24,
+  };
+  
+ introduce.call(person); 
+  
 // 9. Write a higher order function createMultiplier that takes a factor as an argument and returns another functiom that multiplies a number by that factor. 
 
 //COMPLETE YOUR CODE HERE 
