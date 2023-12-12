@@ -125,6 +125,8 @@ car.make = "Toyota"
 car.model = "Camry"
 
 console.log(car)
+
+
 //10. Given an array "students" of JSON objects define a function displayByKey which takes this array object 
 // and a keyName as string and displays the value of the key for each of the JSON objects.
 var students = [
@@ -133,3 +135,13 @@ var students = [
     { firstName: "Hermione", lastName: "Granger", house: "Gryffindor" }
 ];
 //COMPLETE YOUR CODE HERE 
+
+function displayByKey (keyName, objList)
+{
+    for (let i=0; i<objList.length; i++)
+    {
+        console.log(objList[i][keyName])
+    }
+}
+
+displayByKey("firstName", students)
