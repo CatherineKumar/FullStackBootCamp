@@ -69,7 +69,7 @@ console.log( calculate.call(this, 1, 2,add) )
 
 //4. Given an array of person objects, define a function to find oldest person object.
 
-persons = [{"name" : "Harry", "age" : 12}, {"name" : "Ron", "age" : 11}, {"name" : "Hermione", "age" : 13}]
+var persons = [{"name" : "Harry", "age" : 12}, {"name" : "Ron", "age" : 11}, {"name" : "Hermione", "age" : 13}]
 //COMPLETE YOUR CODE HERE 
 
 function findOldest (personArr)
@@ -152,6 +152,14 @@ const person = {
 // 9. Write a higher order function createMultiplier that takes a factor as an argument and returns another functiom that multiplies a number by that factor. 
 
 //COMPLETE YOUR CODE HERE 
+
+function createMultiplier(factor)
+{
+    var result = new Function("x",  "return x * " + factor)
+    return result
+}
+
+console.log( createMultiplier(4)(6))
 
 // 10. Write a function called "calculate" that adds two numbers and assign a property "description" to it with a string describing what the function does. Then, access and log this property.
 
