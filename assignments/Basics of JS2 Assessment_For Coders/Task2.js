@@ -72,14 +72,56 @@ console.log( calculate.call(this, 1, 2,add) )
 persons = [{"name" : "Harry", "age" : 12}, {"name" : "Ron", "age" : 11}, {"name" : "Hermione", "age" : 13}]
 //COMPLETE YOUR CODE HERE 
 
+function findOldest (personArr)
+{
+    var high = 0
+    var pos
+
+    for (var i = 0; i < personArr.length; i++) 
+    {
+        //checking high
+        if (personArr[i].age > high)
+        {
+            high = personArr[i].age;
+            pos = i;
+        }
+    }
+    return personArr[pos]
+}
+ console.log( findOldest(persons) )
+
 //5.  Create a function that calculates the sum of an array using IIFE function.
 
 //COMPLETE YOUR CODE HERE 
 
+let result = (function (numLIst)
+{
+    var sum = 0
+
+    for( i=0; i<numLIst.length; i++)
+    {
+        sum += numLIst[i]
+    }
+    return sum
+})([10,20,30])
+
+console.log( result )
+
 //6. Write a function printContext that, when invoked, logs the this keyword to the console. Then, demonstrate how the context of a function can change when calling it with different objects using the call method.
 
-//COMPLETE YOUR CODE HERE 
 
+//COMPLETE YOUR CODE HERE 
+function printContext() {
+    console.log(this) ;
+  }
+  
+  const obj1 = { name: "obj1" };
+  const obj2 = { name: "obj2" };
+    
+  printContext.call(obj1);
+  printContext.call(obj2);
+
+console.log(this)
 //7. Create a function multiply that takes two parameters and returns their product. Use the bind method to create a new function "double" that multiplies a single parameter by 2.
 
 //COMPLETE YOUR CODE HERE 
