@@ -57,7 +57,7 @@ var students = [
 //COMPLETE YOUR CODE HERE 
 for( let i=0; i<students.length; i++)
 {
-    console.log(students[i].firstName, ' ',students[i].lastName )
+    console.log(students[i].firstName, students[i].lastName )
 }
 
 // 6. Given a function doubleNumber which takes a number as an argument and returns its double value.

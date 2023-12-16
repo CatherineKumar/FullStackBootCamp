@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Knowledge</title>
+    <!-- Link to an external CSS stylesheet for styling. -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to an external JavaScript file for quiz logic and questions. -->
+    <script src="quizQuestions.js"></script>
+</head>
+
+<body>
+    <!-- Main quiz container. -->
+    <div class="quiz-container">
+        <!-- Quiz title. -->
+        <h1>Test Your Knowledge</h1>
+
+        <!-- Container for question count and question text. -->
+        <div id="question-count"></div>
+        <div id="question-container">
+            <p id="question"></p>
+        </div>
+
+        <!-- Container for displaying answer choices. -->
+        <div id="choices-container">
+            <!-- Answer choice buttons with click handlers. -->
+            <button class="choice" onclick="checkAnswer(0)"></button>
+            <button class="choice" onclick="checkAnswer(1)"></button>
+            <button class="choice" onclick="checkAnswer(2)"></button>
+        </div>
+
+        <br />
+
+        <!-- Display the user's current score. -->
+        <div id="score">Current Score: 0</div>
+
+        <br />
+
+        <!-- Button to restart the quiz. -->
+        <button onclick="restartQuiz()">Restart</button>
+    </div>
+
+    <!-- Link to an external JavaScript file for handling the quiz logic. -->
+    <script src="script.js"></script>
+</body>
+
+</html>
