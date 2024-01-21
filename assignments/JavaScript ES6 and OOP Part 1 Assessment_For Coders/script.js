@@ -1,4 +1,13 @@
-const recipes = [];
+const recipes = [
+    {
+        title: "Grilled Cheese Sandwich",
+        ingredients: ['bread', 'sliced cheese'],
+        instructions: ''
+    }
+    
+];
+
+const recipeObj = {};
 
 //Declared index of the recipe to be edited
 var indexOfRecipeToBeEdited = -1
@@ -14,6 +23,15 @@ var isEditMode = false
 // Finally, display the recipes using the displayRecipes() function
 document.getElementById('add-recipe-btn').addEventListener('click', function() {
     // Write your code here for task 1
+    //alert('This works');
+    let recipeTitle
+    let ingredientList
+    let instructionList
+
+    recipeTitle = document.getElementById("title").value
+    ingredientList = document.getElementById("ingredients").value
+    instructionList = document.getElementById("instructions").value
+    alert( instructionList)
 });
 
 // Clear the form's input fields
