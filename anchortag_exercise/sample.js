@@ -4,4 +4,4 @@ const evenNumbers = numbers.filter(num => num % 2 === 0);
 
 console.log(evenNumbers);
 
-console.log('yo')
+console.log('yo');
