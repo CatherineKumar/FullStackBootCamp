@@ -6,6 +6,11 @@ var indexOfRecipeToBeEdited = -1
 // Declared a flag to set the edit mode
 var isEditMode = false
 
+function init()
+{
+    isEditMode = false
+    clearInputFields()
+}
 // Update a recipe when the "Add Recipe" button is clicked
 // If the recipe is new, then add the recipe to the recipes array 
 // Use addRecipes() function to add the new recipe
@@ -19,23 +24,21 @@ document.getElementById('add-recipe-btn').addEventListener('click', function() {
     let ingredients
     let instructions
 
-    isEditMode = false
     title = document.getElementById("title").value
     ingredients = document.getElementById("ingredients").value
     instructions = document.getElementById("instructions").value
-    indexOfRecipeToBeEdited = findRecipe(title)
 
-    if (indexOfRecipeToBeEdited < 0)
+    if ( isEditMode == false)
     {  
         addRecipe({title,ingredients,instructions })
     }
     else{
+        recipes[indexOfRecipeToBeEdited].title = document.getElementById("title").value
         recipes[indexOfRecipeToBeEdited].ingredients = ingredients
         recipes[indexOfRecipeToBeEdited].instructions = instructions
     }
     displayRecipes()
     clearInputFields();
-    isEditMode = false
 }
 
 );
@@ -48,9 +51,7 @@ document.getElementById('recipe-list').addEventListener('click', (event) => {
     action = event.target.innerHTML
 
     if( action === 'Edit' ||  action === 'Delete' )
-    {
-        
-        isEditMode = true
+    {        
         let button = event.target
         title = button.getAttribute('recipeTitle')
         indexOfRecipeToBeEdited = findRecipe (title)
@@ -74,6 +75,7 @@ document.getElementById('recipe-list').addEventListener('click', (event) => {
 // Clear the form's input fields
 function clearInputFields() {
     // Write your code here for task 2
+    isEditMode = false
     document.getElementById('title').value = '';
     document.getElementById('ingredients').value = '';
     document.getElementById('instructions').value = '';
@@ -141,6 +143,7 @@ function displayRecipes() {
 // Edit the recipe object when the Edit button is clicked
 function editRecipe(index) {
     // Write your code here for task 5
+    isEditMode = true;
     document.getElementById("title").value = recipes[index].title
     document.getElementById("ingredients").value = recipes[index].ingredients
     document.getElementById("instructions").value = recipes[index].instructions 
