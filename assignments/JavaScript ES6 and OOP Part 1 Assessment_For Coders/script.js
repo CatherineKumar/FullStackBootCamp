@@ -48,14 +48,29 @@ function displayRecipes() {
     recipeList.innerHTML = '';
    
     recipes.forEach((recipe) => {
-       const listItem = document.createElement('li')
-       const{title,ingredients,instructions} = recipe
+       let div = document.createElement('div');
+       let li = null;
+       let subLi = null; 
+
+       li = document.createElement('li')
+       const{title,ingredients,instructions} = recipe 
+       li.innerText = `${title}`
+   
+       let subOl = document.createElement('ul')
        separatedArray = ingredients.split(',');
-       listItem.innerText = `${title}`
-       recipeList.appendChild(listItem)
 
+       for (let i in separatedArray )
+       {
+           let ingredientValue = separatedArray[i];
+           subLi = document.createElement('li');
+           subLi.innerText = ingredientValue;
+           subOl.appendChild(subLi);
+       }
+       li.appendChild(subOl);
+       recipeList.appendChild(div)
+       recipeList.appendChild(li);
+     });
 
-      });   
 }
 
 // Edit the recipe object when the Edit button is clicked
