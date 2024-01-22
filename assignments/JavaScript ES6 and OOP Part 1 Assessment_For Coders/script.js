@@ -1,7 +1,5 @@
 const recipes = [];
 
-const recipeObj = {};
-
 //Declared index of the recipe to be edited
 var indexOfRecipeToBeEdited = -1
 
@@ -24,7 +22,19 @@ document.getElementById('add-recipe-btn').addEventListener('click', function() {
     title = document.getElementById("title").value
     ingredients = document.getElementById("ingredients").value
     instructions = document.getElementById("instructions").value
-    addRecipe({title,ingredients,instructions })
+    indexOfRecipeToBeEdited = findRecipe(title)
+
+    if (indexOfRecipeToBeEdited < 0)
+    {
+        isEditMode = false
+        addRecipe({title,ingredients,instructions })
+    }
+    else{
+        isEditMode = true
+        editRecipe (indexOfRecipeToBeEdited)
+    }
+    displayRecipes()
+    clearInputFields();
 });
 
 // Clear the form's input fields
@@ -39,8 +49,7 @@ function clearInputFields() {
 function addRecipe(recipe) {
     // Write your code here for task 3
     recipes.push(recipe);
-    displayRecipes()
-    clearInputFields();
+
 }
 
 // Display Recipes
@@ -50,39 +59,27 @@ function displayRecipes() {
     recipeList.innerHTML = '';
    
     recipes.forEach((recipe) => {
-       let div = document.createElement('div');
-       let ul = document.createElement('ul');
        let li = null;
-       let li2 = null
-       let subLi = null; 
+       let li2 = null;
+       let li3 = null
+
        let br = null
        br = document.createElement("span");
        br.innerHTML = "<br/>";
 
-
        li = document.createElement('li')
        const{title,ingredients,instructions} = recipe 
        li.innerText = `${title}`
-       li.appendChild(br)
+      
        li2 = document.createElement('li')
-       li2.innerText = `Instructions: ${instructions}`
+       li2.innerText = `Ingredients: ${ingredients}`
+
+       li3 = document.createElement('li')
+       li3.innerText = `Instructions: ${instructions}`
    
-       let subOl = document.createElement('ul')
-       separatedArray = ingredients.split(',');
-
-       for (let i in separatedArray )
-       {
-           let ingredientValue = separatedArray[i];
-           subLi = document.createElement('li');
-           subLi.innerText = ingredientValue;
-           subOl.appendChild(subLi);
-       }
-       
-       li.appendChild(subOl);
        recipeList.appendChild(li)
-
-       ul.appendChild(li2)
-       recipeList.appendChild(ul)
+       recipeList.appendChild(li2)
+       recipeList.appendChild(li3)
 
        br = document.createElement("span");
        br.innerHTML = "<br/>";
@@ -94,6 +91,8 @@ function displayRecipes() {
 // Edit the recipe object when the Edit button is clicked
 function editRecipe(index) {
     // Write your code here for task 5
+    recipes[index].ingredients = document.getElementById("ingredients").value
+    recipes[index].instructions = document.getElementById("instructions").value
 }
 
 // Delete the recipe object when the Delete button is clicked
@@ -105,4 +104,14 @@ function deleteRecipe(index){
         clearInputFields();
         isEditMode = false;
     }
+}
+
+// Return index of recipe
+function findRecipe (title)
+{
+    let index
+          
+    index = recipes.findIndex(x => x.title === title);
+      
+    return index;
 }
