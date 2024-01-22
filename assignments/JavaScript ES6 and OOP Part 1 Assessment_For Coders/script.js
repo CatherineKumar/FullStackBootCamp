@@ -35,7 +35,22 @@ document.getElementById('add-recipe-btn').addEventListener('click', function() {
     }
     displayRecipes()
     clearInputFields();
-});
+}
+
+);
+
+
+document.getElementById('recipe-list').addEventListener('click', (event) => {
+    if(event.target.innerHTML === 'Edit' ||  event.target.innerHTML === 'Delete' )
+    {
+        alert('Button')
+    }    
+    
+})
+;
+
+
+
 
 // Clear the form's input fields
 function clearInputFields() {
@@ -83,22 +98,25 @@ function displayRecipes() {
        button_edit.innerHTML = "Edit";
        button_edit.style.margin = "1rem";
        button_edit.setAttribute("id","button_edit_" + recipe.title);
+       button_edit.setAttribute("recipeTitle", recipe.title);
     
        let button_delete = document.createElement("button");
        button_delete.innerHTML = "Delete";
        button_delete.style.margin = "1rem";
        button_delete.setAttribute("id","button_delete_" + recipe.title);
+       button_delete.setAttribute("recipeTitle", recipe.title);
 
        recipeList.appendChild(li)
        recipeList.appendChild(li2)
        recipeList.appendChild(li3)
 
-       let ul = document.createElement("ul");
+       //let ul = document.createElement("ul");
        li4 = document.createElement("li");
        li4.appendChild(button_edit);
        li4.appendChild(button_delete)
-       ul.appendChild(li4);
-       recipeList.appendChild(ul)
+       //ul.appendChild(li4);
+       //recipeList.appendChild(ul)
+       recipeList.appendChild(li4)
 
 
 /*
