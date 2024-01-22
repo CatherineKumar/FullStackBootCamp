@@ -34,11 +34,29 @@ function createClubCardHTML(club) {
 // Handle clicking on a football club card
 function handleClubClick(element) {
     // Write your code here for task1
+    const clickedClubCard = element;
+    if (clickedClubCard) {
+        const clickedClubName = clickedClubCard.querySelector('h2').textContent;
+        const selectedClub = clubData.find(club => club.name === clickedClubName);
+
+        if (selectedClub) {
+            displayClubDetails(selectedClub);
+        }
+    }
 }
 
 // Display football club details
 function displayClubDetails(club) {
    // Write your code here for task2
+   const clubDetailsHTML = `
+   <button onclick="window.location.reload();">Back</button>
+   <h2>${club.name}</h2>
+   <img src="${club.image}">
+   <p>League: ${club.league}</p>
+   <p>City: ${club.city}</p>
+   <p>Description: ${club.description}</p>`;
+   // <p>Players: ${club.cast.join(', ')}</p>  
+    clubDetailsContainer.innerHTML = clubDetailsHTML;   
 }
 
 // Function to view club players
