@@ -1,11 +1,4 @@
-const recipes = [
-    {
-        title: "Grilled Cheese Sandwich",
-        ingredients: ['bread', 'sliced cheese'],
-        instructions: ''
-    }
-    
-];
+const recipes = [];
 
 const recipeObj = {};
 
@@ -24,14 +17,14 @@ var isEditMode = false
 document.getElementById('add-recipe-btn').addEventListener('click', function() {
     // Write your code here for task 1
     //alert('This works');
-    let recipeTitle
-    let ingredientList
-    let instructionList
+    let title
+    let ingredients
+    let instructions
 
-    recipeTitle = document.getElementById("title").value
-    ingredientList = document.getElementById("ingredients").value
-    instructionList = document.getElementById("instructions").value
-    alert( instructionList)
+    title = document.getElementById("title").value
+    ingredients = document.getElementById("ingredients").value
+    instructions = document.getElementById("instructions").value
+    addRecipe({title,ingredients,instructions })
 });
 
 // Clear the form's input fields
@@ -43,13 +36,26 @@ function clearInputFields() {
 // Add the new recipe to the recipes array
 function addRecipe(recipe) {
     // Write your code here for task 3
-    
+
+    recipes.push(recipe);
+    displayRecipes()
 }
 
 // Display Recipes
 function displayRecipes() {
     // Write your code here for task 4
-       
+    const recipeList = document.getElementById('recipes');
+    recipeList.innerHTML = '';
+   
+    recipes.forEach((recipe) => {
+       const listItem = document.createElement('li')
+       const{title,ingredients,instructions} = recipe
+       separatedArray = ingredients.split(',');
+       listItem.innerText = `${title}`
+       recipeList.appendChild(listItem)
+
+
+      });   
 }
 
 // Edit the recipe object when the Edit button is clicked
