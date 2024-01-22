@@ -19,33 +19,52 @@ document.getElementById('add-recipe-btn').addEventListener('click', function() {
     let ingredients
     let instructions
 
+    isEditMode = false
     title = document.getElementById("title").value
     ingredients = document.getElementById("ingredients").value
     instructions = document.getElementById("instructions").value
     indexOfRecipeToBeEdited = findRecipe(title)
 
     if (indexOfRecipeToBeEdited < 0)
-    {
-        isEditMode = false
+    {  
         addRecipe({title,ingredients,instructions })
     }
     else{
-        isEditMode = true
-        editRecipe (indexOfRecipeToBeEdited)
+        recipes[indexOfRecipeToBeEdited].ingredients = ingredients
+        recipes[indexOfRecipeToBeEdited].instructions = instructions
     }
     displayRecipes()
     clearInputFields();
+    isEditMode = false
 }
 
 );
 
 
 document.getElementById('recipe-list').addEventListener('click', (event) => {
-    if(event.target.innerHTML === 'Edit' ||  event.target.innerHTML === 'Delete' )
+    let title 
+    let action
+
+    action = event.target.innerHTML
+
+    if( action === 'Edit' ||  action === 'Delete' )
     {
-        alert('Button')
+        
+        isEditMode = true
+        let button = event.target
+        title = button.getAttribute('recipeTitle')
+        indexOfRecipeToBeEdited = findRecipe (title)
+
+        if (action === 'Delete')
+        {
+            deleteRecipe(indexOfRecipeToBeEdited) 
+        }
+        else
+        if (action === 'Edit')
+        {
+            editRecipe(indexOfRecipeToBeEdited)
+        }
     }    
-    
 })
 ;
 
@@ -64,7 +83,6 @@ function clearInputFields() {
 function addRecipe(recipe) {
     // Write your code here for task 3
     recipes.push(recipe);
-
 }
 
 // Display Recipes
@@ -110,20 +128,12 @@ function displayRecipes() {
        recipeList.appendChild(li2)
        recipeList.appendChild(li3)
 
-       //let ul = document.createElement("ul");
+
        li4 = document.createElement("li");
        li4.appendChild(button_edit);
        li4.appendChild(button_delete)
-       //ul.appendChild(li4);
-       //recipeList.appendChild(ul)
-       recipeList.appendChild(li4)
 
-
-/*
-       br = document.createElement("span");
-       br.innerHTML = "<br/>";
-       recipeList.appendChild(br);  
-       */     
+       recipeList.appendChild(li4) 
      });
 
 }
@@ -131,8 +141,9 @@ function displayRecipes() {
 // Edit the recipe object when the Edit button is clicked
 function editRecipe(index) {
     // Write your code here for task 5
-    recipes[index].ingredients = document.getElementById("ingredients").value
-    recipes[index].instructions = document.getElementById("instructions").value
+    document.getElementById("title").value = recipes[index].title
+    document.getElementById("ingredients").value = recipes[index].ingredients
+    document.getElementById("instructions").value = recipes[index].instructions 
 }
 
 // Delete the recipe object when the Delete button is clicked
