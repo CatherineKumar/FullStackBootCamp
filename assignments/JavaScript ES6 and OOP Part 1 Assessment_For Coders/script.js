@@ -30,15 +30,17 @@ document.getElementById('add-recipe-btn').addEventListener('click', function() {
 // Clear the form's input fields
 function clearInputFields() {
     // Write your code here for task 2
-    
+    document.getElementById('title').value = '';
+    document.getElementById('ingredients').value = '';
+    document.getElementById('instructions').value = '';
 }
 
 // Add the new recipe to the recipes array
 function addRecipe(recipe) {
     // Write your code here for task 3
-
     recipes.push(recipe);
     displayRecipes()
+    clearInputFields();
 }
 
 // Display Recipes
@@ -49,12 +51,21 @@ function displayRecipes() {
    
     recipes.forEach((recipe) => {
        let div = document.createElement('div');
+       let ul = document.createElement('ul');
        let li = null;
+       let li2 = null
        let subLi = null; 
+       let br = null
+       br = document.createElement("span");
+       br.innerHTML = "<br/>";
+
 
        li = document.createElement('li')
        const{title,ingredients,instructions} = recipe 
        li.innerText = `${title}`
+       li.appendChild(br)
+       li2 = document.createElement('li')
+       li2.innerText = `Instructions: ${instructions}`
    
        let subOl = document.createElement('ul')
        separatedArray = ingredients.split(',');
@@ -66,9 +77,16 @@ function displayRecipes() {
            subLi.innerText = ingredientValue;
            subOl.appendChild(subLi);
        }
+       
        li.appendChild(subOl);
-       recipeList.appendChild(div)
-       recipeList.appendChild(li);
+       recipeList.appendChild(li)
+
+       ul.appendChild(li2)
+       recipeList.appendChild(ul)
+
+       br = document.createElement("span");
+       br.innerHTML = "<br/>";
+       recipeList.appendChild(br);       
      });
 
 }
