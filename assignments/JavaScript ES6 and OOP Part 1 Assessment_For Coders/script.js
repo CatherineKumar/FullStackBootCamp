@@ -62,6 +62,7 @@ function displayRecipes() {
        let li = null;
        let li2 = null;
        let li3 = null
+       let li4 = null
 
        let br = null
        br = document.createElement("span");
@@ -76,10 +77,28 @@ function displayRecipes() {
 
        li3 = document.createElement('li')
        li3.innerText = `Instructions: ${instructions}`
-   
+
+      // li4 = document.createElement('li');
+       let button_edit = document.createElement("button");
+       button_edit.innerHTML = "Edit";
+       button_edit.setAttribute("id","button_edit_" + recipe.title);
+    
+       let button_delete = document.createElement("button");
+       button_delete.innerHTML = "Delete";
+       button_delete.setAttribute("id","button_delete_" + recipe.title);
+
        recipeList.appendChild(li)
        recipeList.appendChild(li2)
        recipeList.appendChild(li3)
+
+       let ul = document.createElement("ul");
+       li4 = document.createElement("li");
+       li4.appendChild(button_edit);
+       li4.appendChild(button_delete)
+       ul.appendChild(li4);
+       recipeList.appendChild(ul)
+
+
 
        br = document.createElement("span");
        br.innerHTML = "<br/>";
