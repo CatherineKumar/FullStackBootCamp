@@ -81,10 +81,12 @@ function displayRecipes() {
       // li4 = document.createElement('li');
        let button_edit = document.createElement("button");
        button_edit.innerHTML = "Edit";
+       button_edit.style.margin = "1rem";
        button_edit.setAttribute("id","button_edit_" + recipe.title);
     
        let button_delete = document.createElement("button");
        button_delete.innerHTML = "Delete";
+       button_delete.style.margin = "1rem";
        button_delete.setAttribute("id","button_delete_" + recipe.title);
 
        recipeList.appendChild(li)
@@ -99,10 +101,11 @@ function displayRecipes() {
        recipeList.appendChild(ul)
 
 
-
+/*
        br = document.createElement("span");
        br.innerHTML = "<br/>";
-       recipeList.appendChild(br);       
+       recipeList.appendChild(br);  
+       */     
      });
 
 }
