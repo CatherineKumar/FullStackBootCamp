@@ -62,7 +62,20 @@ function displayClubDetails(club) {
 
 // Function to view club players
 function viewClubPlayers(clubName) {
+   let playersHTML = ""
    // Write your code here for task3
+   let club = clubData.find(o => o.name === clubName);
+
+   playersHTML = `
+   <button onclick="window.location.reload();">Back</button>
+   <h2>${club.name}</h2>
+   <img src="${club.image}">
+   <h2>Players</h2>
+   `
+   for (p of club.players) {
+    playersHTML += `<p>${p.name}: ${p.position}, No. ${p.number}</p>`;
+  }
+  clubDetailsContainer.innerHTML = playersHTML;
 }
 
 // Handle search input and filter clubs
