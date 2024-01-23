@@ -73,7 +73,7 @@ function viewClubPlayers(clubName) {
    <h2>Players</h2>
    `
    for (p of club.players) {
-    playersHTML += `<p>${p.name}: ${p.position}, No. ${p.number}</p>`;
+    playersHTML += `<p>${p.name} -  ${p.position}, No. ${p.number}, goals: ${p.goals}, assists: ${p.assists}</p>`;
   }
   clubDetailsContainer.innerHTML = playersHTML;
 }
