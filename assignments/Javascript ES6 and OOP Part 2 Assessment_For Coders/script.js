@@ -54,32 +54,10 @@ function displayClubDetails(club) {
    <img src="${club.image}">
    <p>League: ${club.league}</p>
    <p>City: ${club.city}</p>
+   <p>Stadium: ${club.stadium}</p>
    <p>Description: ${club.description}</p>`;
-   // <p>Players: ${club.cast.join(', ')}</p>  
+
     clubDetailsContainer.innerHTML = clubDetailsHTML;
-    
-    /*
-let data = [
-  {
-    "animal": "cat",
-    "name": "Fluffy"
-  },
-  {
-    "animal": "dog",
-    "name": "Bowser"
-  },
-  {
-    "animal": "cat",
-    "name": "Felix"
-  }
-]
-Now extract the names using .map:
-
-let names = data.map(item => item.name)
-
-
-let nameString = names.join(' ')    
-     */
 }
 
 // Function to view club players
