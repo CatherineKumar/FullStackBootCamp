@@ -81,4 +81,11 @@ function viewClubPlayers(clubName) {
 // Handle search input and filter clubs
 function handleSearchInput() {
     // Write your code here for task4
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredClubs = clubData.filter(club => {
+        // Create a string containing club details for searching
+        const clubDataString = `${club.name} ${club.city} ${club.league} `.toLowerCase();
+        return clubDataString.includes(searchTerm);
+    });
+    displayClubs(filteredClubs);
 }
