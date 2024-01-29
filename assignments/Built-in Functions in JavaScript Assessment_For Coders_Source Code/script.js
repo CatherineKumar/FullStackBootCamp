@@ -60,6 +60,8 @@ document.getElementById('play-button').addEventListener('click', () => {
 document.getElementById('next-button').addEventListener('click', () => {
     // Move to the next video and play it
     // Write your code here for task 3
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length; // Move to the next song index
+    playVideo(isShuffle ? videos : originalList);
 });
 
 document.getElementById('prev-button').addEventListener('click', () => {
