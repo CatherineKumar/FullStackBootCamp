@@ -59,16 +59,17 @@ document.getElementById('play-button').addEventListener('click', () => {
 
 document.getElementById('next-button').addEventListener('click', () => {
     // Move to the next video and play it
-    // Write your code here for task 3
+    // Write your code here for task 3    
     currentvideoIndex = (currentvideoIndex + 1) % videos.length; // Move to the next song index
-    playVideo(isShuffle ? videos : originalList);
+    playvideo(isShuffle ? videos : originalList);
+    
 });
 
 document.getElementById('prev-button').addEventListener('click', () => {
     // Move to the previous video and play it
     // Write your code here for task 4
     currentvideoIndex = (currentvideoIndex - 1 + videos.length) % videos.length; // Move to the previous song index
-    playSong(isShuffle ? videos : originalList);
+    playvideo(isShuffle ? videos : originalList);
 });
 
 // Function to shuffle the array in place
