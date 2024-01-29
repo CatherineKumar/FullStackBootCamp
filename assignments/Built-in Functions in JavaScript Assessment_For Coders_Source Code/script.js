@@ -67,6 +67,8 @@ document.getElementById('next-button').addEventListener('click', () => {
 document.getElementById('prev-button').addEventListener('click', () => {
     // Move to the previous video and play it
     // Write your code here for task 4
+    currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length; // Move to the previous song index
+    playSong(isShuffle ? videos : originalList);
 });
 
 // Function to shuffle the array in place
