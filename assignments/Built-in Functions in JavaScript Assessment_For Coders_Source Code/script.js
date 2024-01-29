@@ -16,6 +16,13 @@ let isShuffle = false;
 // Function to update the video playlist displayed in the UI
 function updatePlayList(playlist){
     // Write your code here for task 1
+    videoList.innerHTML = '';
+    // Iterate through each video in the playlist and create list elements
+    playlist.forEach(video => {
+        let liElement = document.createElement("li");
+        liElement.innerHTML = `${Object.values(video)[0]}`; // Display video title
+        videoList.appendChild(liElement);
+    });     
 }
 
 // Function to update the UI with video information
