@@ -46,6 +46,10 @@ function playvideo(playlist) {
 // Event delegation for video selection in the playlist
 videoList.addEventListener('click', (e) => {
     // Write your code here for task 2
+    if (e.target.tagName === 'LI') {
+        currentvideoIndex = [...videoList.children].indexOf(e.target); // Get the index of the clicked video
+        playvideo(isShuffle ? videos : originalList); // Play the selected video
+    }    
 });
 
 // Event listeners for play, next, and previous buttons
