@@ -109,6 +109,17 @@ function isBalanced(expression) {
 
 function isMatchingPair(opening, closing) {
   // Check if the opening and closing braces form a matching pair
+    if (  ( opening == '{' && closing == '}' ) ||
+          ( opening == '(' && closing == ')' ) ||
+          ( opening == '[' && closing == ']' )
+    )
+    {
+      return true
+    }
+    else
+    {
+       return false;
+    }
 }
 
 // Example usage:
@@ -117,3 +128,5 @@ let unbalancedExpression = "{(a+b-c}*[a-{b*c}]";
 
 console.log("Balanced Expression:", isBalanced(balancedExpression)); // Output: true
 console.log("Balanced Expression:", isBalanced(unbalancedExpression)); // Output: false
+
+
