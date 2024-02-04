@@ -2,10 +2,22 @@
 class Stack {
   constructor() {
     // Initialize an empty array to store stack elements
+    this.top = -1
+    this.capacity = 0
+    this.items = []
   }
 
   isEmpty() {
     // Check if the stack is empty
+    if ( this.items.length == 0 )
+    {
+      return true
+    }
+    else
+    {
+      return false
+    }
+    
   }
 
   // Push element onto the stack
