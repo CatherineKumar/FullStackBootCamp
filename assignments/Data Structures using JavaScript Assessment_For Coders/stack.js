@@ -95,16 +95,53 @@ console.log("Top element:", stack.peek());
 
 //Problem Statement 2
 function isBalanced(expression) {
-  // Initialize an empty array to represent the stack
+    // Initialize an empty array to represent the stack
+    const expStack = new Stack()
+    let ch
+    let closing
+    let opening
+    let isBalance = true;
 
-  for (let i = 0; i < expression.length; i++) {
-    //Iterate through each character in the expression
-    // If it's an opening brace, push it onto the stack
-    // If it's a closing brace, check if the stack is empty or if the top of the stack matches the corresponding opening brace
-    // If the stack is empty or the top of the stack doesn't match, the expression is unbalanced
-  }
+    for (let i = 0; i < expression.length; i++) {
+       //Iterate through each character in the expression
+       // If it's an opening brace, push it onto the stack
+       // If it's a closing brace, check if the stack is empty or if the top of the stack matches the corresponding opening brace
+       // If the stack is empty or the top of the stack doesn't match, the expression is unbalanced
+       ch = expression[i]
+       if ( ch == '(' || ch == '{' || ch == '[')
+       {
+          expStack.push(ch)
+       }
+       else if (ch == ')' || ch == '}' || ch == ']')
+       {
+          closing = ch;
+          if (expStack.isEmpty() == false)
+          {
+             opening = expStack.pop()
+             if ( isMatchingPair(opening, closing) == false)
+             {
+                isBalance = false;
+                break
 
-  // If the stack is empty at the end, the expression is balanced
+             }
+          }
+          else
+          {
+              isBalance = false;
+              break
+          }
+       }    
+    }
+
+    // If the stack is empty at the end, the expression is balanced
+    if (isBalance == true)
+    {
+        if (expStack.isEmpty() == false)
+        {
+          isBalance = false
+        }
+    }
+    return isBalance    
 }
 
 function isMatchingPair(opening, closing) {
