@@ -82,25 +82,61 @@ myPrinterQueue.displayQueue();
 //Problem Statement 4
 function countStudentsUnableToEat(students, sandwiches) {
   // Create a queue using the spread operator to copy the students array
+  const q = [...students]
+  let student
+  let q_size
+  let ctr
+  let isEaten = false;
 
   // Iterate through each sandwich
-  for (const sandwich of sandwiches) {
-
+  for (const sandwich of sandwiches) {    
     // Check if there are no students left in the queue
     // Break the loop if no students are left
+    
+    if (q.length == 0)
+    {
+       break;
+    }
 
     // Get the front student from the queue
+    q_size = q.length
+    student = q.shift()    
+    ctr = 1;
+    isEaten = false;
 
     // Check if the front student prefers the current sandwich
     // If the student takes the sandwich, continue to the next sandwich
     // If the student doesn't prefer this sandwich, put the student back to the end of the queue
+    while( ctr <= q_size || isEaten == false )
+    {
+       if ( student == sandwich )
+       {
+         isEaten = true;
+       }
+       else
+       {
+         q.push(student)
+       }
+       ctr++
+       student = q.shift()
+    }
+    if ( isEaten = false)
+    {
+      break;
+    }
   }
 
-  // Return the count of remaining students in the queue who are unable to eat
+   // Return the count of remaining students in the queue who are unable to eat
+   return q.length
 }
 
 // Example usage:
+
 const students = [1, 0, 1, 0];
 const sandwiches = [0, 1, 0, 1];
+
+//const students =  [1,1,1,0,0,1];
+//const sandwiches = [1,0,0,0,1,1];
+
 const result = countStudentsUnableToEat(students, sandwiches);
 console.log("Students unable to eat:", result);
