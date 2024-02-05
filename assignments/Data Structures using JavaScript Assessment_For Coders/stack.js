@@ -1,79 +1,77 @@
 //Problem Statement 1
 class Stack {
   constructor() {
-    // Initialize an empty array to store stack elements
-    this.top = -1
-    this.capacity = 0
-    this.items = []
+      // Initialize an empty array to store stack elements
+      this.top = -1
+      this.capacity = 0
+      this.items = []
   }
 
   isEmpty() {
-    // Check if the stack is empty
-    if ( this.items.length == 0 )
-    {
-      return true
-    }
-    else
-    {
-      return false
-    }
-    
+      // Check if the stack is empty
+      if ( this.items.length == 0 )
+      {
+        return true
+      }
+      else
+      {
+        return false
+      }    
   }
 
   // Push element onto the stack
   push(element) {
-    // Add the specified element to the end of the items array
-    this.items.push(element)
-    this.top += 1
+      // Add the specified element to the end of the items array
+      this.items.push(element)
+      this.top += 1
   }
 
   // Pop element from the stack
   pop() {
-    // Check if the stack is empty - If empty, return "Underflow"
-    // Remove and return the last element of the items array
-    if (this.isEmpty())
-    {
-      return "Underflow"
-    }
-    else
-    {
-      this.top -= 1
-      return this.items.pop()
-    }
+      // Check if the stack is empty - If empty, return "Underflow"
+      // Remove and return the last element of the items array
+      if (this.isEmpty())
+      {
+        return "Underflow"
+      }
+      else
+      {
+        this.top -= 1
+        return this.items.pop()
+      }
   }
 
   // Peek the top element of the stack
   peek() {
-    // Return the last element of the items array without removing it
-    if (this.isEmpty())
-    {
-      return "Empty Stack"
-    }
-    else
-    {
-      return this.items[this.top]
-    }
+      // Return the last element of the items array without removing it
+      if (this.isEmpty())
+      {
+        return undefined
+      }
+      else
+      {
+        return this.items[this.top]
+      }
   }
-
+ 
   // Print the stack elements
   printStack() {
- 
-    // Iterate through each element in the items array
-    // Return the resulting string with trailing spaces removed
+      // Iterate through each element in the items array
+      // Return the resulting string with trailing spaces removed
 
-    let result = ''
-    for (let i = 0; i < this.items.length; i++)
-    {
-      result +=  this.items[i].toString().trim() 
-    }
-    return result
+      let result = ''
+      for (let i = 0; i < this.items.length; i++)
+      {
+        result +=  this.items[i].toString().trim() 
+      }
+      return result
   }
 
 }
 
 // Create a new stack instance
 const stack = new Stack();
-
+  
 // Push elements onto the stack
 stack.push(10);
 stack.push(20);
