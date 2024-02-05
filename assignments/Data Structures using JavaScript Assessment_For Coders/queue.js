@@ -124,7 +124,7 @@ function countStudentsUnableToEat(students, sandwiches) {
     if ( isEaten == false)
     {
       // last student was not able to eat sandwich
-      // add back to queue
+      // add to end of queue
        q.push(student) 
        break;
     }
