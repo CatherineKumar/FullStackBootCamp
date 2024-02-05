@@ -97,7 +97,7 @@ function countStudentsUnableToEat(students, sandwiches) {
     {
        break;
     }
-
+    
     // Get the front student from the queue
     q_size = q.length
     student = q.shift()    
@@ -107,7 +107,7 @@ function countStudentsUnableToEat(students, sandwiches) {
     // Check if the front student prefers the current sandwich
     // If the student takes the sandwich, continue to the next sandwich
     // If the student doesn't prefer this sandwich, put the student back to the end of the queue
-    while( ctr <= q_size || isEaten == false )
+    while( ctr <= q_size && isEaten == false )
     {
        if ( student == sandwich )
        {
@@ -116,13 +116,17 @@ function countStudentsUnableToEat(students, sandwiches) {
        else
        {
          q.push(student)
+         student = q.shift()
        }
-       ctr++
-       student = q.shift()
+       ctr++       
     }
-    if ( isEaten = false)
+
+    if ( isEaten == false)
     {
-      break;
+      // last student was not able to eat sandwich
+      // add back to queue
+       q.push(student) 
+       break;
     }
   }
 
@@ -135,8 +139,11 @@ function countStudentsUnableToEat(students, sandwiches) {
 const students = [1, 0, 1, 0];
 const sandwiches = [0, 1, 0, 1];
 
-//const students =  [1,1,1,0,0,1];
-//const sandwiches = [1,0,0,0,1,1];
-
 const result = countStudentsUnableToEat(students, sandwiches);
 console.log("Students unable to eat:", result);
+
+
+const students2 =  [1,1,1,0,0,1];
+const sandwiches2 = [1,0,0,0,1,1];
+const result2 = countStudentsUnableToEat(students2, sandwiches2);
+console.log("Students unable to eat:", result2);
