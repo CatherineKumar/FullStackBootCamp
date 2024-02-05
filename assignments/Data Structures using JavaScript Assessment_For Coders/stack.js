@@ -119,7 +119,6 @@ function isBalanced(expression) {
              {
                 isBalance = false;
                 break
-
              }
           }
           else
