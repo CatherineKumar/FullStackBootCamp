@@ -3,7 +3,6 @@ class Stack {
   constructor() {
       // Initialize an empty array to store stack elements
       this.top = -1
-      this.capacity = 0
       this.items = []
   }
 
