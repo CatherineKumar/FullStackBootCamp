@@ -71,7 +71,7 @@ class Stack {
 
 // Create a new stack instance
 const stack = new Stack();
-  
+
 // Push elements onto the stack
 stack.push(10);
 stack.push(20);
