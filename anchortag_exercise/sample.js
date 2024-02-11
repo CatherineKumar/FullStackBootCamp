@@ -1,32 +1,55 @@
-// Add dynamic buttons using function and loop
- // https://www.youtube.com/watch?v=gJfUYovSL-Y
- let div = document.createElement('div');
- document.body.appendChild(div);
- let ul = document.createElement('ul');
- let li = null;
- let subLi = null;
- 
- let skills = {
-    FrontEnd: ['Html', 'Css', 'JavaScript', 'React'],
-    BackEnd: ['NodeJs', 'ExpressJs'],
-    Database: ['MongoDB', 'MySql']
- };
- const values = Object.entries(skills);
+function display(msg) {
 
- values.forEach(([key, value]) => {
-    let li = document.createElement('li');
-    li.innerText = key;
-    let subOl = document.createElement('ol');
+   return new Promise(( resolve, reject ) =>{
 
-    for (let i in value){
-        let subValue = value[i];
-        subLi = document.createElement('li');
-        subLi.innerText = subValue;
-        subOl.appendChild(subLi);
-    }
+       if( msg != null ){
 
-    li.appendChild(subOl);
-    ul.appendChild(li);
- });
- div.appendChild(ul);
+           console.log(msg);
 
+           return;
+
+       }
+
+       reject(new Error("Message not provided"));
+
+   });
+
+}
+
+
+
+let promise = display();
+
+
+
+promise
+
+.then(() => {
+
+   console.log('Success!');
+
+})
+
+
+
+.then(() => {
+
+   console.log('Success!!');
+
+})
+
+
+
+.catch((error) => {
+
+   console.log(error.message);
+
+})
+
+
+
+.then(() => {
+
+   console.log('Success!!!');
+
+});
