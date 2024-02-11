@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+
+form{
+    /* display: flex; */
+    flex-direction: column;
+    width: 500px;
+    margin: 5vh auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+}
+
+.message{
+    color: red;
+}
+
+#product-list {
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 1%;
+    padding: 2%;
+    width: 100%;
+}
+
+#product-list img {
+    width: 150px;
+    height: auto;
+    display: flex;
+}
+
+#logout{
+    float: right;
+}
