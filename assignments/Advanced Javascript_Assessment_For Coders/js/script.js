@@ -1,8 +1,19 @@
 // Function to handle user registration
 function register() {
   // Write your code for task1 here
-  // Use fetchRegisterPageData() function to fetch values
-  
+  // Use fetchRegisterPageData() function to fetch valuesName:
+  const { fullname, username, email, contact, password, confirmPassword } = fetchRegisterPageData();
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      document.getElementById("message").textContent = "Passwords do not match!";
+      return;
+  }
+
+  // Create user object with registration details
+  const user = { fullname, username, email, contact, password };
+  localStorage.setItem("user", JSON.stringify(user));  
+  loadSignInPage();
 }
 
 // Fetch form data from the register.html page
