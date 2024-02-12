@@ -146,15 +146,36 @@ function loadSignInPage() {
 
 // Function to fetch data from an external URL endpoint
 async function fetchData(url, listElement) {
-  // Write your code for task3 here
-    
+    // Write your code for task3 here
+    try 
+    {
+       const response = await fetch(url);
+       const data = await response.json();
+       if (data) 
+       {
+           displayData(data, listElement);
+       }
+    } catch (err) 
+    {
+       console.log("Data could not be fetched", err);
+    }
+}    
    
-  }
-
 
 // Display data which is fetched from an external API
-function displayData(data, listElement) {
-  // Write your code for task4 here
+function displayData(data, listElement) 
+{
+    // Write your code for task4 here
+  
+    data.data.forEach(item => {
+      // Create HTML structure for displaying each of the item details
+      const itemTable = `<div class="item-card">
+          <h3>${item.name}</h3>
+          <img src="${item.image}" style="width:100%; height:20vh;">
+          </div>`    
+      listElement.innerHTML += itemTable;
+
+});  
   
   
 }
