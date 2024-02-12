@@ -186,7 +186,8 @@ function displayData(data, listElement)
 }
 
 // Logging out when clicked on the logout button
-function logout(){
+function logout()
+{
     // Write your code for task5 here
     sessionStorage.setItem("login", false)
     sessionStorage.setItem("activeUser","")
