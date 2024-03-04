@@ -20,7 +20,86 @@ const AdminDashboard = () => {
               </Card.Body>
             </Card>
           </Col>
+          <Col className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Categories</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Categories
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Add Category
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Restaurants</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Restaurants
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Add Restaurant
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
+        <Row>
+        <Col className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Food Items</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Food Items
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Add Food Item
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Orders</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Orders
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Update Orders
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Users</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Customers
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Restaurant Menu</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Menu
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Update Menu
+                </Button>              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+    
       </Container>
     </>
   );
