@@ -13,14 +13,11 @@ const HomePage = () => {
          <h4>Try New Cuisines</h4>
          <Row>
          {cuisines.map(cuisine=> (
-              <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={cuisine.image} />
+              <Card style={{ width: '12rem' }} className="m-1">
+              <Card.Img variant="top" src={cuisine.image} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
               <Card.Body>
                 <Card.Title>{cuisine.name}</Card.Title>
-                <Card.Text>
-                {cuisine.description}
-                </Card.Text>
-                
+
               </Card.Body>
             </Card>
          ))}
