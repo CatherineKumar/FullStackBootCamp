@@ -59,6 +59,40 @@ const HomePage = () => {
 
   return (
     <>
+      {loadingCuisines && <Spinner animation="grow" />}
+      {cuisinesList && cuisinesList.length === 0 && (
+        <AlertMessage variant="info" message="No cuisines to display" />
+      )}
+      {cuisinesList && (
+        <div className="container-fluid">
+          <h4>Try new cuisine</h4>
+          <Row className="g-4">
+            {cuisinesList.map((cuisine) => (
+              <Col key={cuisine._id} md={6} sm={12} lg={4}>
+                <ItemCard item={cuisine} itemName="cuisine" />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      )}      
+
+      {loadingCategories && <Spinner animation="grow" />}
+      {categoriesList && categoriesList.length === 0 && (
+        <AlertMessage variant="info" message="No categories to display" />
+      )}
+      {categoriesList && (
+        <div className="container-fluid">
+          <h4>Get inspiration for your order</h4>
+          <Row className="g-4">
+            {categoriesList.map((category) => (
+              <Col key={category._id} md={6} sm={12} lg={4}>
+                <ItemCard item={category} itemName="category" />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      )}
+
       {loadingRestaurants && <Spinner animation="grow" />}
       {restaurantsList && restaurantsList.length === 0 && (
         <AlertMessage variant="info" message="No restaurants to display" />
@@ -76,39 +110,7 @@ const HomePage = () => {
         </div>
       )}
 
-      {loadingCategories && <Spinner animation="grow" />}
-      {categoriesList && categoriesList.length === 0 && (
-        <AlertMessage variant="info" message="No categories to display" />
-      )}
-      {categoriesList && (
-        <div className="container-fluid">
-          <h4>Categories</h4>
-          <Row className="g-4">
-            {categoriesList.map((category) => (
-              <Col key={category._id} md={6} sm={12} lg={4}>
-                <ItemCard item={category} itemName="category" />
-              </Col>
-            ))}
-          </Row>
-        </div>
-      )}
       
-      {loadingCuisines && <Spinner animation="grow" />}
-      {cuisinesList && cuisinesList.length === 0 && (
-        <AlertMessage variant="info" message="No cuisines to display" />
-      )}
-      {cuisinesList && (
-        <div className="container-fluid">
-          <h4>Cuisines</h4>
-          <Row className="g-4">
-            {cuisinesList.map((cuisine) => (
-              <Col key={cuisine._id} md={6} sm={12} lg={4}>
-                <ItemCard item={cuisine} itemName="cuisine" />
-              </Col>
-            ))}
-          </Row>
-        </div>
-      )}      
     </>
     
   );
