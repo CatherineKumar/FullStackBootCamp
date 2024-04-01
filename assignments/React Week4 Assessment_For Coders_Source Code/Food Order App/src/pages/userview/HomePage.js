@@ -22,6 +22,8 @@ const HomePage = () => {
   const listOfCategories = useSelector((state) => state.categoryList);
   const listOfCuisines = useSelector((state) => state.cuisineList);
   const { loadingRestaurants, successRestaurants, errorRestaurants, restaurants } = listOfRestaurants;
+  const { loadingCategories, successCategories, errorCategories, categories } = listOfCategories;
+  const { loadingCuisines, successCuisines, errorCuisines, cuisines } = listOfCuisines;
 
   const userLogin = useSelector((state) => state.login);
   const { userInfo } = userLogin;
@@ -29,6 +31,8 @@ const HomePage = () => {
     if (userInfo) {
       navigate("/");
       dispatch(listRestaurants());
+      dispatch(listCategories());
+      dispatch(listCuisines());
     } else {
       navigate("/login");
     }
@@ -40,6 +44,16 @@ const HomePage = () => {
     if (restaurants && restaurants.length > 0) {
       console.log(restaurants);
       setRestaurantsList(restaurants);
+    }
+
+    if (categories && categories.length > 0) {
+      console.log(categories);
+      setCategoriesList(categories);
+    }
+
+    if (cuisines && cuisines.length > 0) {
+      console.log(cuisines);
+      setCuisinesList(cuisines);
     }
   });
 
@@ -61,7 +75,42 @@ const HomePage = () => {
           </Row>
         </div>
       )}
+
+      {loadingCategories && <Spinner animation="grow" />}
+      {categoriesList && categoriesList.length === 0 && (
+        <AlertMessage variant="info" message="No categories to display" />
+      )}
+      {categoriesList && (
+        <div className="container-fluid">
+          <h4>Categories</h4>
+          <Row className="g-4">
+            {categoriesList.map((category) => (
+              <Col key={category._id} md={6} sm={12} lg={4}>
+                <ItemCard item={category} itemName="category" />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      )}
+      
+      {loadingCuisines && <Spinner animation="grow" />}
+      {cuisinesList && cuisinesList.length === 0 && (
+        <AlertMessage variant="info" message="No cuisines to display" />
+      )}
+      {cuisinesList && (
+        <div className="container-fluid">
+          <h4>Cuisines</h4>
+          <Row className="g-4">
+            {cuisinesList.map((cuisine) => (
+              <Col key={cuisine._id} md={6} sm={12} lg={4}>
+                <ItemCard item={cuisine} itemName="cuisine" />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      )}      
     </>
+    
   );
 };
 
