@@ -27,6 +27,7 @@ USE `food_order_app`;
 
 /*Create table command for user table*/
 CREATE TABLE `user` (
+  
   `id` int NOT NULL,
   `userName` varchar(50) NOT NULL,
   `fullName` varchar(100) NOT NULL,
@@ -63,21 +64,121 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 1. Create table command for cuisine table*/
+CREATE TABLE `cuisine` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `name` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(200) NOT NULL,
+  `image` VARCHAR(200) NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 2. Create table command for restaurant table*/
+CREATE TABLE `restaurant` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `name` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(200) NOT NULL,
+  `contact` INT NOT NULL,
+  `image` VARCHAR(200) NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 3. Create table command for fooditem table*/
+CREATE TABLE `fooditem` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `name` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(200) NOT NULL,
+  `image` VARCHAR(200) NOT NULL,
+  `categoryId` INT NOT NULL,
+  `cuisineId` INT NOT NULL,
+  `isVeg` TINYINT(1) NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 4. Create table command for menu table*/
+CREATE TABLE `menu` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `restaurantId` INT NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 5. Create table command for menu_items table*/
+CREATE TABLE `menu_items` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `menuId` INT NOT NULL,
+  `fooditemId` INT NOT NULL,
+  `fooditemPrice` DECIMAL(10,2) NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 6. Create table command for cart table*/
+CREATE TABLE `cart` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `userId` INT NOT NULL,
+  `restaurantId` INT NOT NULL,
+  `orderTotalPrice` DECIMAL(10,2) NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 7. Create table command for cart_items table*/
 
+CREATE TABLE `cart_items` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `cartId` INT NOT NULL,
+  `fooditemId` INT NOT NULL,
+  `fooditemPrice` DECIMAL(10,2) NOT NULL,
+  `unitsInCart` INT NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 /*Q. 8. Create table command for shippingDetails table*/
+
+CREATE TABLE `shippingdetails` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `shippingAddress` VARCHAR(200) NOT NULL,
+  `emailId` VARCHAR(50) NOT NULL,
+  `phoneNo` INT NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Q. 9. Create table command for order table*/
 
+CREATE TABLE `order` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `userId` INT NOT NULL,
+  `restaurantId` INT NOT NULL,
+  `orderTotalPrice` DECIMAL(10,2) NOT NULL,
+  `shippingDetailsId` INT NOT NULL,
+  `orderStatus` VARCHAR(50) NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 /*Q. 10. Create table command for order_items table*/
+
+CREATE TABLE `order_items` (
+  `id` INT NOT NULL PRIMARY KEY,
+  `orderId` INT NOT NULL,
+  `fooditemId` INT NOT NULL,
+  `fooditemPrice` DECIMAL(10,2) NOT NULL,
+  `unitsPruchased` INT NOT NULL,
+  `isActive` INT NOT NULL DEFAULT '1',
+  `createdTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTs` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
