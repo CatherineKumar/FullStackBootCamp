@@ -33,11 +33,18 @@ where c.name = 'Italian'
 
 /* 4. Retrieve details of food items, including their name, vegetarian status,
  and cuisine name, for only those food items that are vegetarian. */
- 
+
  Select fi.name, isVeg, c.name as cuisineName
  from fooditem fi
  join cuisine c
    on fi.cuisineId = c.id
  where isVeg = 1
+
 /* 5. Retrieve the details of users who have items in their cart 
 along with the total order amount */
+
+Select u.username, c.orderTotalPrice
+from cart c
+join user u
+  on c.userId = u.Id
+where c.isActive = 1
