@@ -2,7 +2,14 @@
 use food_order_app;
 
 /* 1. Retrieve number of fooditems for each cuisine */
-
+Select c.name, subquery.countFoodItems
+from (
+select cuisineId, count(*) as countFoodItems
+from fooditem
+group by cuisineId
+) as subquery
+join cuisine c
+  on subquery.cuisineId = c.Id
 /* 2. Retrieve category names in the order of highest to lowest no. of fooditems */
 
 /* 3. Retrieve cuisine name as CuisineName, fooditem name as name FoodItemName 
