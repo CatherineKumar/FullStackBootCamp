@@ -36,9 +36,27 @@ FROM (
 ) as subquery
 ORDER BY distinctCount DESC LIMIT 0, 1
 /* 7. Retrieve all the shipping details where emailId contains 'doe'. */
+Select *
+from shippingdetails
+where emailId like '%doe%'
 
 /* 8. Retrieve the order with the highest price. */
- 
+Select id, orderTotalPrice
+from `order`
+order by orderTotalPrice desc
+Limit 1 ;
+
 /* 9. Retrieve the most recently updated order. */
 
+Select *
+from `order`
+order by updatedTs desc
+Limit 1 ;
+ 
 /* 10. How many total units of food items were purchased in orderId 1? */
+
+ Select sum(oi.unitsPurchased)
+from `order` o
+join order_items oi
+  on o.id = oi.orderId
+where o.id = 1
