@@ -3,7 +3,13 @@ use food_order_app;
 
 /* 1. Display all distinct cuisine names. */
 
+Select distinct name from cuisine
+
 /* 2. Display description of 'Cake' category. */
+
+Select description
+from category
+where name  = 'Cake'
 
 /* 3. Select all restaurants where restaurant names ends with 'Junction'. */
 
