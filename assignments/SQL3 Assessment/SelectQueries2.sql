@@ -24,7 +24,12 @@ order by subquery.countFoodItems desc
 
 /* 3. Retrieve cuisine name as CuisineName, fooditem name as name FoodItemName 
 and description as Description of all the fooditems belonging to 'Italian' cuisine */
-
+Select c.name as CuisineName
+    , fi.name as FoodItemName
+from fooditem fi
+join cuisine c
+  on fi.cuisineId = c.id
+where c.name = 'Italian'
 /* 4. Retrieve details of food items, including their name, vegetarian status,
  and cuisine name, for only those food items that are vegetarian. */
 
