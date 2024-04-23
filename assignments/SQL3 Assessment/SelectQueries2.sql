@@ -10,7 +10,17 @@ group by cuisineId
 ) as subquery
 join cuisine c
   on subquery.cuisineId = c.Id
+
 /* 2. Retrieve category names in the order of highest to lowest no. of fooditems */
+Select c.name, subquery.countFoodItems
+from (
+select categoryId, count(*) as countFoodItems
+from fooditem
+group by categoryId
+) as subquery
+join category c
+  on subquery.categoryId = c.Id
+order by subquery.countFoodItems desc
 
 /* 3. Retrieve cuisine name as CuisineName, fooditem name as name FoodItemName 
 and description as Description of all the fooditems belonging to 'Italian' cuisine */
