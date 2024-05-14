@@ -13,6 +13,11 @@ class Cuisines {
     const cuisine = this.cuisines.find((cuisine) => cuisine.id == id);
     return cuisine;
   }
+
+  getCuisineByName(name) {
+    const cuisine = this.cuisines.find((cuisine) => cuisine.name == name);
+    return cuisine;
+  }
   
 }
 

@@ -55,6 +55,15 @@ const fetchAllRestaurantsByCategoryHandler = (req, res, category) => {
 
 const fetchAllRestaurantsByCuisineHandler = (req, res, cuisine) => {
   //COMPLETE TASK 2(a) HERE
+  if (req.method === "GET") {
+    res.statusCode = 200;
+    console.log(`${new Date()} - API called for fetching all restaurants by category`);
+    res.end(JSON.stringify(restaurants.getAllRestaurantsByCuisine(cuisine)));
+  } else {
+    res.statusCode = 404;
+    console.log(`${new Date()} - Route not found`);
+    res.end(JSON.stringify({ message: "Route not found" }));
+  }  
 };
 
 

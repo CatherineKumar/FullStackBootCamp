@@ -64,7 +64,42 @@ class Restaurants {
   }
   
   getAllRestaurantsByCuisine(cuisine) {
-  //COMPLETE TASK 2(b) HERE
+    try {
+      // Step 1: Find cuisine id of the matching cuisine
+      const cuisineId = cuisines.getCuisineByName(cuisine).id;
+
+      // Step 2: Find food items matching the selected cuisine
+      const selectedCuisineFooditems = fooditems.getFooditemsByCuisineId(cuisineId);
+
+      // Step 3 : Find ids of the food items matching the selected cuisine
+      const selectedCuisineFooditemsIds = selectedCuisineFooditems.map(fooditem => fooditem.id);
+
+      // Step 4: Find menu items with food items matching the selected cuisine
+      const selectedCuisineMenuitems = []
+      selectedCuisineFooditemsIds.map(fooditemId => {
+        menuitems.getAllMenuitemsByFooditemId(fooditemId).forEach(menuitem => {
+          selectedCuisineMenuitems.push(menuitem);
+        });
+      })
+
+      // Step 5: Find ids of menus having menu items matching the selected cuisine
+      const selectedCuisineMenuIds = selectedCuisineMenuitems.map(menuitem => menuitem.menuId);
+      const selectedCuisineMenus = []
+      selectedCuisineMenuIds.forEach(menuId => {
+        selectedCuisineMenus.push(menus.getMenuById(menuId));
+      });
+
+      // Step 6: Find restaurants with menus matching the selected category
+      const filteredRestaurants = this.restaurants.filter(restaurant =>
+        selectedCuisineMenus.some(menu => menu.restaurantId === restaurant.id)
+      );
+      return filteredRestaurants;
+    }
+    catch {
+      console.log("No Route")
+    }
+    return `No Restaurants serving ${cuisine} cuisine`;
+
   }
   
 }
