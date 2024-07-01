@@ -2,7 +2,7 @@ const JWT_SECRET_KEY = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrst
 
 const SERVER_PORT = 8080;
 
-const DATABASE_URI = 'YOUR_CONNECTION_STRING/DATABASE_NAME'
+const DATABASE_URI = 'mongodb+srv://ckumar:A$$w0rd@database-cluster.dixyxqh.mongodb.net/?retryWrites=true&w=majority&appName=database-cluster'
 
 const TOKEN_EXPIRATION_DURATION = '7d';
 
