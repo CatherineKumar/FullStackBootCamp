@@ -4,7 +4,7 @@ const fs = require("fs");
 // Connect to MongoDB
 mongoose
   .connect(
-    "mongodb+srv://ckumar:A$$w0rd@database-cluster.dixyxqh.mongodb.net/?retryWrites=true&w=majority&appName=database-cluster",
+    "mongodb+srv://ckumar:A$$w0rd@database-cluster.dixyxqh.mongodb.net/FoodOrderAppDb?retryWrites=true&w=majority&appName=database-cluster",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
