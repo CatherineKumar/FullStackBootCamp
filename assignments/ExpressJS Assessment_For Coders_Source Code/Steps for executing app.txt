@@ -15,7 +15,7 @@ Before running the application make sure you provide your Database connection st
     "username":"john35@d",
     "password" : "johnd"
 }
-3. Copy the session token generated for the logged in user in usersessionmodel collection and paste in the Authorization->Bearer Token. 
+3. Copy the session token generated for the logged in user in usersessionmodel collection and paste in the Authorization-Bearer Token. 
 
 4. Give any POST or GET request like http://localhost:8080/api/v1/categories to fetch details of categories.
 

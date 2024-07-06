@@ -10,6 +10,7 @@ const addUser = expressAsyncHandler(async (req, res) => {
     const existingUser = await userRepository.findUserByUsername(username);
     if (existingUser) {
       res.status(400);
+      console.log( existingUser)
       throw new Error("User already exists");
     }
 
@@ -65,6 +66,8 @@ const login = expressAsyncHandler(async (req, res) => {
 
     if (!userSessionObject) {
       const sessionToken = generatingSessionToken(user._id);
+      console.log("==== SESSION TOKEN ====")
+      console.log( sessionToken)
       userSessionObject = await userRepository.createUserSession({
         userId: user._id,
         sessionToken: sessionToken,
