@@ -32,9 +32,9 @@ describe("Category APIs Tests", function () {
   });
 
   const testCategory = {
-    name: "testCategory",
-    description: "Test Category description",
-    image: "Test Category Image URL"
+    name: "testFooditem",
+    description: "Test Fooditem description",
+    image: "Test Fooditem Image URL"
   };
 
   describe("POST /api/v1/categories/", async () => {
