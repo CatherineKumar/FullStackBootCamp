@@ -8,7 +8,7 @@ const CategoryModel = require("../app/models/categoryModel");
 const originalConsoleLog = console.log;
 const originalConsoleError = console.error;
 
-describe("Category APIs Tests", function () {
+describe("Fooditem APIs Tests", function () {
   var sessionToken;
   before(async () => {
     console.log = function () {};
