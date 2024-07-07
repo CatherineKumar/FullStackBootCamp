@@ -8,7 +8,6 @@ const createFooditem = expressAsyncHandler(async (req, res) => {
     const { name, description, image, categoryId, cuisineId, isVeg } = req.body;
     const result = await fooditemRepository.createFooditem(name, description, image, categoryId, cuisineId, isVeg);
 
-    console.log("In service file  createFooditem", result)
     if (result) {
       res.status(201).json({
         message: "Fooditem created successfully",
@@ -37,6 +36,28 @@ const deleteFooditem = expressAsyncHandler(async (req, res) => {
 
 const getFooditem = expressAsyncHandler(async (req, res) => {
   /* COMPLETE TASK 1.d HERE */
+  try {
+    const fooditemId = req.params.id;
+    const result = await fooditemRepository.getFooditem(fooditemId);
+
+    if (result) {
+      res.status(200).json({
+        data: result,
+        message: "Sucessfully fetched Fooditem details.",
+      });
+    } else {
+      res.status(204);
+      throw new Error(
+        `Not able to find the Fooditem based on the id: ${fooditemId}`
+      );
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      message: "Error fetching Fooditem details",
+      error: err.message,
+    });
+  }
 });
 
 const getAllFooditems = expressAsyncHandler(async (req, res) => {
