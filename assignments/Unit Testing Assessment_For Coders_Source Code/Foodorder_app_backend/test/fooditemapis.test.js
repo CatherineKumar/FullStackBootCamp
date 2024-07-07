@@ -3,7 +3,7 @@ const request = require("supertest");
 
 const expect = chai.expect;
 const { app } = require("../server");
-const CategoryModel = require("../app/models/categoryModel");
+const FooditemModel = require("../app/models/categoryModel");
 
 const originalConsoleLog = console.log;
 const originalConsoleError = console.error;
@@ -14,7 +14,7 @@ describe("Fooditem APIs Tests", function () {
     console.log = function () {};
     console.error = function () {};
 
-    await CategoryModel.deleteMany();
+    await FooditemModel.deleteMany();
     let credentials = {
       username: "testuser",
       password: "testpassword",
