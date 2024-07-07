@@ -28,6 +28,25 @@ const createFooditem = expressAsyncHandler(async (req, res) => {
 
 const editFooditem = expressAsyncHandler(async (req, res) => {
   /* COMPLETE TASK 1.b HERE */
+  try {
+    const fooditemId = req.params.id;
+    const result = await fooditemRepository.editFooditem(fooditemId, req.body);
+
+    if (result) {
+      res.status(200).json({
+        message: "FoodItem is successfully edited",
+      });
+    } else {
+      res.status(400);
+      throw new Error(`FoodItem editing failed`);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      message: "Error editing FoodItem details",
+      error: err.message,
+    });
+  }  
 });
 
 const deleteFooditem = expressAsyncHandler(async (req, res) => {
