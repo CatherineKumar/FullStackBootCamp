@@ -38,7 +38,7 @@ describe("Category APIs Tests", function () {
   };
 
   describe("POST /api/v1/categories/", async () => {
-    it("should add a new category", async () => {
+    it("should add a new fooditem", async () => {
       const res = await request(app)
         .post("/api/v1/categories/")
         .set("Authorization", `Bearer ${sessionToken}`)
