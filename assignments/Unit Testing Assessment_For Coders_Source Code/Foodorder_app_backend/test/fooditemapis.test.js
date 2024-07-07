@@ -67,10 +67,10 @@ describe("Category APIs Tests", function () {
       expect(categories).to.be.an("array");
       expect(categories).length.greaterThanOrEqual(0);
 
-      categories.forEach((category) => {
-        expect(category.name).to.be.an("string");
-        expect(category.description).to.be.an("string");
-        expect(category.image).to.be.an("string");
+      categories.forEach((fooditem) => {
+        expect(fooditem.name).to.be.an("string");
+        expect(fooditem.description).to.be.an("string");
+        expect(fooditem.image).to.be.an("string");
       });
       
     });
