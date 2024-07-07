@@ -57,7 +57,7 @@ describe("Category APIs Tests", function () {
     });
   });
   describe("GET /api/v1/categories", function () {
-    it("should return 200 OK with categories", async function () {
+    it("should return 200 OK with food items", async function () {
       const response = await request(app)
         .get("/api/v1/categories")
         .expect(200)
