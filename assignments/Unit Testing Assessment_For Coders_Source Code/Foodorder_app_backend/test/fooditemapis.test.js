@@ -63,11 +63,11 @@ describe("Category APIs Tests", function () {
         .expect(200)
         .expect("Content-Type", /json/);
 
-      const categories = response.body.data;
-      expect(categories).to.be.an("array");
-      expect(categories).length.greaterThanOrEqual(0);
+      const fooditems = response.body.data;
+      expect(fooditems).to.be.an("array");
+      expect(fooditems).length.greaterThanOrEqual(0);
 
-      categories.forEach((fooditem) => {
+      fooditems.forEach((fooditem) => {
         expect(fooditem.name).to.be.an("string");
         expect(fooditem.description).to.be.an("string");
         expect(fooditem.image).to.be.an("string");
