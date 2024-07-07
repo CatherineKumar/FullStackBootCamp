@@ -60,11 +60,11 @@ describe("Fooditem APIs Tests", function () {
       expect(res.status).to.equal(401);
     });
   });
-  /*
-  describe("GET /api/v1/categories", function () {
+  
+  describe("GET /api/v1/fooditems", function () {
     it("should return 200 OK with food items", async function () {
       const response = await request(app)
-        .get("/api/v1/categories")
+        .get("/api/v1/fooditems")
         .expect(200)
         .expect("Content-Type", /json/);
 
@@ -76,9 +76,13 @@ describe("Fooditem APIs Tests", function () {
         expect(fooditem.name).to.be.an("string");
         expect(fooditem.description).to.be.an("string");
         expect(fooditem.image).to.be.an("string");
+        expect(fooditem.categoryId).to.be.an("string");
+        expect(fooditem.cuisineId).to.be.an("string");
+        expect(fooditem.isVeg).to.be.an("boolean");
+        expect(fooditem.isActive).to.be.an("boolean");
       });
       
     });
   });
-*/  
+  
 });
