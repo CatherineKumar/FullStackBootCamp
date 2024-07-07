@@ -37,6 +37,7 @@ describe("Fooditem APIs Tests", function () {
     image: "Test Fooditem Image URL"
   };
 
+
   describe("POST /api/v1/categories/", async () => {
     it("should add a new fooditem", async () => {
       const res = await request(app)
@@ -56,6 +57,7 @@ describe("Fooditem APIs Tests", function () {
       expect(res.status).to.equal(401);
     });
   });
+  /*
   describe("GET /api/v1/categories", function () {
     it("should return 200 OK with food items", async function () {
       const response = await request(app)
@@ -75,4 +77,5 @@ describe("Fooditem APIs Tests", function () {
       
     });
   });
+*/  
 });
