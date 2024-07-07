@@ -3,7 +3,7 @@ const request = require("supertest");
 
 const expect = chai.expect;
 const { app } = require("../server");
-const FooditemModel = require("../app/models/categoryModel");
+const FooditemModel = require("../app/models/fooditemModel");
 
 const originalConsoleLog = console.log;
 const originalConsoleError = console.error;
@@ -34,24 +34,27 @@ describe("Fooditem APIs Tests", function () {
   const testFooditem = {
     name: "testFooditem",
     description: "Test Fooditem description",
-    image: "Test Fooditem Image URL"
+    image: "Test Fooditem Image URL",
+    categoryId: "66899790b7fd322106b55e43",
+    cuisineId: "66899790b7fd322106b55e50",
+    isVeg: true
   };
 
 
-  describe("POST /api/v1/categories/", async () => {
+  describe("POST /api/v1/fooditems/", async () => {
     it("should add a new fooditem", async () => {
       const res = await request(app)
-        .post("/api/v1/categories/")
+        .post("/api/v1/fooditems/")
         .set("Authorization", `Bearer ${sessionToken}`)
         .send(testFooditem);
 
       expect(res.status).to.equal(201);
-      expect(res.body.message).to.equal("Category created successfully");
+      expect(res.body.message).to.equal("Fooditem created successfully");
     });
 
     it("should return 401 incase token is not provided in request", async () => {
       const res = await request(app)
-        .post("/api/v1/categories/")
+        .post("/api/v1/fooditems/")
         .send(testFooditem);
 
       expect(res.status).to.equal(401);
