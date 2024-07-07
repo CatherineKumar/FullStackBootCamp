@@ -31,7 +31,7 @@ describe("Category APIs Tests", function () {
     console.error = originalConsoleError;
   });
 
-  const testCategory = {
+  const testFooditem = {
     name: "testFooditem",
     description: "Test Fooditem description",
     image: "Test Fooditem Image URL"
@@ -42,7 +42,7 @@ describe("Category APIs Tests", function () {
       const res = await request(app)
         .post("/api/v1/categories/")
         .set("Authorization", `Bearer ${sessionToken}`)
-        .send(testCategory);
+        .send(testFooditem);
 
       expect(res.status).to.equal(201);
       expect(res.body.message).to.equal("Category created successfully");
@@ -51,7 +51,7 @@ describe("Category APIs Tests", function () {
     it("should return 401 incase token is not provided in request", async () => {
       const res = await request(app)
         .post("/api/v1/categories/")
-        .send(testCategory);
+        .send(testFooditem);
 
       expect(res.status).to.equal(401);
     });
