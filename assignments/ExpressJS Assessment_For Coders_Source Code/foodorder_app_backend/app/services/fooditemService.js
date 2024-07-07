@@ -51,6 +51,25 @@ const editFooditem = expressAsyncHandler(async (req, res) => {
 
 const deleteFooditem = expressAsyncHandler(async (req, res) => {
   /* COMPLETE TASK 1.c HERE */
+  try {
+    const fooditemId = req.params.id;
+    const result = await fooditemRepository.deleteFooditem(fooditemId);
+
+    if (result) {
+      res.status(200).json({
+        message: "Fooditem is successfully deleted",
+      });
+    } else {
+      res.status(400);
+      throw new Error(`Fooditem deletion failed`);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      message: "Error deleting Fooditem",
+      error: err.message,
+    });
+  }  
 });
 
 const getFooditem = expressAsyncHandler(async (req, res) => {
